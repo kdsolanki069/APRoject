@@ -1,0 +1,266 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/APMasterPage.cshtml";
+}
+
+<style>
+    .w3-badge {
+        margin: 5px; 
+        border-radius: 50%;
+    }
+    .tdstyle {
+        word-break: break-all;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(191, 191, 191);
+    }
+    .tdspan {
+        font-size: 14px;
+    }
+    .chocolate {
+        background-color: #733508;
+        color: #fff;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }
+    .Green {
+        background-color: #008000;
+        color: #fff;
+        display: inline-block;
+        padding-left: 6px;
+        padding-right: 6px;
+        text-align: center;
+    }
+    .blue {
+        background-color: #00003f;
+        color: #fff;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }    
+    .Orange {
+        background-color: #cd7000;
+        color: #fff;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }   
+    .txtOrange {
+       
+        color: #cd7000;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }
+    .txtblue {
+       
+        color: #00003f;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }
+    .txtGreen {
+       
+        color: #008000;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }
+    .txtchocolate {
+       
+        color: #733508;
+        display: inline-block;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+    }
+
+   
+</style>
+
+<!--Page Title-->
+<section class="page-title" style="background-image:url(../../../Machinery/images/background/2.jpg)">
+    <div class="auto-container">
+        <h1><span class="txttype">Product Single</span></h1>
+        <ul class="page-breadcrumb">
+            <li><a href="~/Home/Index">Home</a></li>
+            <li><a href="~/Product/Products">Product's</a></li>
+            <li><span class="txttype">Product Single</span></li>
+        </ul>
+    </div>
+</section>
+<!--End Page Title-->
+<!--Sidebar Page Container-->
+<section class="contact-section-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+
+            <!--Content Side-->
+            <div class="content pull-right col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!--Shop Single-->
+                <div class="shop-single">
+                    <div class="product-details">
+
+                        <!--Basic Details-->
+                        <div class="main-product-thumbnail pb-60">
+                            <div class="container">
+                                <div class="row">
+                                    <!-- Main Thumbnail Image Start -->
+                                    <div class="col-lg-5">
+                                        <!-- Thumbnail Large Image start -->
+                                        <div class="tab-content" id="tabPhoto" style="margin-bottom:10px;">
+                                            @*<div id="thumb1" class="tab-pane active">
+                                                <a data-fancybox="images" href="~/Machinery/images/resource/products/D11V9/1.jpg"><img src="~/Machinery/images/resource/products/D11V9/1.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb2" class="tab-pane">
+                                                <a data-fancybox="images" href="~/Machinery/images/resource/products/D11V9/3.jpg"><img src="~/Machinery/images/resource/products/D11V9/3.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb3" class="tab-pane">
+                                                <a data-fancybox="images" href="~/Machinery/images/resource/products/D11V9/4.jpg"><img src="~/Machinery/images/resource/products/D11V9/4.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb4" class="tab-pane">
+                                                <a data-fancybox="images" href="~/Machinery/images/resource/products/D11V9/5.jpg"><img src="~/Machinery/images/resource/products/D11V9/5.jpg" alt="product-view"></a>
+                                            </div>*@
+                                        </div>
+                                        <!-- Thumbnail Large Image End -->
+                                        <!-- Thumbnail Image End -->
+                                        <div class="product-thumbnail">
+                                            <div class="thumb-menu nav" id="divPhoto">
+                                                @*<a class="active" data-toggle="tab" href="#thumb1"> <img src="~/Machinery/images/resource/products/D11V9/1.jpg" alt="product-thumbnail" height="100px" width="100px;"></a>
+                                                <a data-toggle="tab" href="#thumb2">                <img src="~/Machinery/images/resource/products/D11V9/3.jpg" alt="product-thumbnail" height="100px" width="100px;"></a>
+                                                <a data-toggle="tab" href="#thumb3">                <img src="~/Machinery/images/resource/products/D11V9/4.jpg" alt="product-thumbnail" height="100px" width="100px;"></a>
+                                                <a data-toggle="tab" href="#thumb4">                <img src="~/Machinery/images/resource/products/D11V9/5.jpg" alt="product-thumbnail" height="100px" width="100px;"></a>*@
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail image end -->
+                                    </div>
+                                    <!-- Main Thumbnail Image End -->
+                                    <!-- Thumbnail Description Start -->
+                                    <div class="col-lg-7">
+                                        <div class="thubnail-desc fix">
+                                            <h3 class="product-header" id="lblProducttype">@*11V9 Flaring Cup Wheel*@</h3>
+
+                                            <div id="thumb1" class="tab-pane Diagaram" >
+                                                @*<a data-fancybox="images" href="~/Machinery/images/resource/products/D11V9/2.jpg"><img src="~/Machinery/images/resource/products/D11V9/2.jpg" alt="product-view"></a>*@
+                                            </div>
+
+                                     </div>
+                                    </div>
+                                    <!-- Thumbnail Description End -->
+                                </div>
+                                <!-- Row End -->
+                            </div>
+                            <!-- Container End -->
+                        </div>
+                        <!--Basic Details-->
+                        <!--Product Info Tabs-->
+                        <div class="product-info-tabs">
+                            <!--Product Tabs-->
+                            <div class="prod-tabs tabs-box">
+
+                                <!--Tab Btns-->
+                                <ul class="tab-btns tab-buttons clearfix">
+                                    <li data-tab="#prod-details" class="tab-btn active-btn">Description</li>
+                                    <li data-tab="#prod-Size" class="tab-btn ">Sizes</li>
+                                    @*<li data-tab="#prod-reviews" class="tab-btn ">Reviews (2)</li>*@
+                                </ul>
+
+                                <!--Tabs Container-->
+                                <div class="tabs-content">
+
+                                    <!--Tab -->
+                                    <div class="tab active-tab" id="prod-details">
+                                        <div class="content" id="lblproddetails">
+                                            <p>11V9 Diamond Grinding Wheel Used For Sharpening And Finishing Of Back And Side Surface Of Hard Alloys.</p>
+                                            <p>11V9 Diamond Grinding Wheel Has Good Free-Cutting, Good Abrasion Resistance, Availability In A Broad Range Of Applications In Both Dry And Wet Condition And Improved Heat Resistance.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab" id="prod-Size">
+                                        <div class="content">
+                                            <table data-sort="sortDisabled" width="100%">
+                                                <tbody id="ProductData">
+                                                    <tr class="firstRow">
+                                                        <td valign="middle" class="tdstyle" align="center" width="122"><strong><span class="tdspan">Model</span></strong></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><strong><span class="tdspan">Size (mm) </br> Dia X  Thick X bore</span></strong></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="134"><strong><span class="tdspan">U (mm)<br /></span></strong></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><strong><span class="tdspan">X (mm)</span></strong></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="139"><strong><span class="tdspan">Code No</span></strong></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="218"><strong><span class="tdspan">Grade <br /></span></strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" class="tdstyle" rowspan="3" colspan="1" align="center" width="122"><span class="tdspan">11V9<br /></span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">90 X 38 X 31.75</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="134"><span class="tdspan">10 <br /></span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">1.5<br /></span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="139"><span class="tdspan">V9 001</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="218">
+                                                            <span class="tdspan">
+
+                                                                <span class="w3-badge Orange">R</span>
+                                                                <span class="w3-badge Green">M</span>
+                                                                <span class="w3-badge blue">F</span>
+                                                                <span class="w3-badge chocolate">L</span>
+                                                            </span>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">125</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="134"><span class="tdspan">40</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">32, 40</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="218"><span class="tdspan">5, 10, 15, 20</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="139"><span class="tdspan">10</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">150</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="134"><span class="tdspan">40</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="138"><span class="tdspan">32, 40</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="218"><span class="tdspan">5, 10, 15, 20</span></td>
+                                                        <td valign="middle" class="tdstyle" align="center" width="139"><span class="tdspan">10</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" colspan="6" rowspan="1" class="tdstyle" width="891">Other size can be made according to customers requirement. Email: sales@moresuperhard.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                            <ul class="">
+                                                </br>
+                                                <li> <span class="w3-badge Orange">R</span> = Rough - <span class="txtOrange"> Orange Colour</span></li>
+                                                <li><span class="w3-badge Green">M</span> = Medium - <span class="txtGreen"> Green Colour</span></li>
+                                                <li> <span class="w3-badge blue">F</span> = Fine - <span class="txtblue"> Blue Colour</span></li>
+                                                <li><span class="w3-badge chocolate">L</span> Lapping - <span class="txtchocolate"> Brown Colour</span></li>
+                                                <li><span class="w3-badge">SP</span> Special Products </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <!--Tab / Active Tab-->
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Product Info Tabs-->
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<script>
+    var  PhotoUrl = '@System.Configuration.ConfigurationManager.AppSettings["PhotoUrl"]';
+</script>
+<script src="~/PageJS/GetProduct.js"></script>

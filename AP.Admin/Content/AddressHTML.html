@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        table.print-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td.print-item {
+            width: 50%;
+            vertical-align: top;
+            padding: 12px;
+            box-sizing: border-box;
+            page-break-inside: avoid;
+        }
+
+        .tel {
+            text-align: right;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .to-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .to-label {
+            font-weight: bold;
+        }
+
+        .company-name {
+            font-weight: bold;
+            height: 28px;
+            overflow: hidden;
+            font-size: 18px;
+        }
+
+        .address {
+            height: 48px;
+            overflow: hidden;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        .from-block {
+            margin-top: 10px;
+        }
+
+        .from-table {
+            width: 100%;
+        }
+
+            .from-table img {
+                max-width: 60px;
+                height: auto;
+            }
+
+        h4, h5, p {
+            margin: 2px 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body onload="window.print(); autoFitText();">
+
+    <table class="print-table">
+        [Address]
+    </table>
+    <script>
+        function autoFitText() {
+            document.querySelectorAll('.fit').forEach(el => {
+
+                let maxFont = el.classList.contains('company-name') ? 18 : 14;
+                let minFont = el.classList.contains('company-name') ? 12 : 9;
+
+                let size = maxFont;
+                el.style.fontSize = size + 'px';
+
+                while (el.scrollHeight > el.clientHeight && size > minFont) {
+                    size--;
+                    el.style.fontSize = size + 'px';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

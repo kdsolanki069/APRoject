@@ -1,0 +1,123 @@
+.nav-tabs .glyphicon:not(.no-margin) { margin-right:10px; }
+.tab-pane .list-group-item:first-child {border-top-right-radius: 0px;border-top-left-radius: 0px;}
+.tab-pane .list-group-item:last-child {border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;}
+.tab-pane .list-group .checkbox { display: inline-block;margin: 0px; }
+.tab-pane .list-group input[type="checkbox"]{ margin-top: 2px; }
+.tab-pane .list-group .glyphicon { margin-right:5px; }
+.tab-pane .list-group .glyphicon:hover { color:#FFBC00; }
+a.list-group-item.read { color: #222;background-color: #F3F3F3; }
+hr { margin-top: 5px;margin-bottom: 10px; }
+.nav-pills>li>a {padding: 5px 10px;}
+
+.nav.nav-stacked>li>a:hover, .nav.nav-stacked>li>a:focus{
+    background: #ddd;
+    color: #555;
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus{
+    background: none;
+    border-color:#aaa;
+    color: #555;
+}
+.white-bg{
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1)
+}
+.mail-box-header {
+    background-color: #ffffff;
+
+    border-bottom: 0;
+    padding: 30px 20px 20px 20px;
+}
+.mail-box-header .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.mail-box-header .mail-search {
+    max-width: 300px;
+}
+.mail-box-header h2{
+    margin-top: 0;
+    font-size: 20px;
+}
+ul.folder-list li{
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+ul.folder-list li a{
+    display: block;
+    padding: 10px 10px;    
+}
+ul.folder-list li a:hover{
+    background: white;
+    color: #566;
+}
+.mail-body{
+   border-top: 1px solid #e7eaec;
+    padding: 20px;
+}
+.mail-attachment {
+    border-top: 1px solid #e7eaec;
+    padding: 20px;
+    font-size: 12px;
+}
+.file-box {
+    float: left;
+    width: 220px;
+}
+.file {
+    border: 1px solid #e7eaec;
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.file .icon {
+    padding: 15px 10px;
+    text-align: center;
+}
+.file .icon, .file .image {
+    height: 100px;
+    overflow: hidden;
+}
+.file .icon i {
+font-size: 70px;
+color: #dadada;
+}
+.file .file-name {
+padding: 10px;
+background-color: #f8f8f8;
+border-top: 1px solid #e7eaec;
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+.labels{
+    display:block; 
+}
+::-webkit-file-upload-button {
+    border-color: transparent; 
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+    text-align: left;
+    color: transparent;
+}
+.file-upload-icon{
+    font-size: 25px;
+    padding: 8px;
+}
+.nav-tabs{
+    border-bottom: 0px;
+}
+.nav-tabs>li>a{
+    margin-right: 0px;
+}
+.unread{
+    font-weight: bold;
+    background: white;
+}
+.read{
+    background: #f6f6f6;
+}

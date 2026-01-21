@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "TypeAdd";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+<style type="text/css">
+    .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+    .img-wrap {
+        position: relative;
+    }
+
+        .img-wrap .close {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            z-index: 100;
+        }
+</style>
+<section class="content-header">
+    <h1>
+        Product
+        <small>Add  Product Type</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Product</a></li>
+        <li class="active">Add  Product Type</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">&nbsp; Add  Product Type</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProducttype">Product Type :</label>
+                                <input type="text" class="form-control  requiredfield" oninput="this.value = this.value.toUpperCase()" id="txtProducttype" placeholder="Enter Product Type " name="txtProducttype">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProducttypename">Product Type Name :</label>
+                                <input type="text" class="form-control  requiredfield" id="txtProducttypename" placeholder="Enter Product Type Name " name="txtProducttypename">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="txtProducttypedetail">Product Type Detail:</label>
+                                <textarea id="txtProducttypedetail" class="requiredfield" name="txtProducttypedetail" rows="5" cols="90" placeholder="Enter Product Type Detail">
+
+                    </textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="margin-bottom:50px;">
+
+                            <h5 class="top-left p-l-20">Selet Front Image</h5>
+
+                            <div id="vrlogo1">
+
+                                <img src="~/assets-front/img/profile-picture.png" id="imgprofile" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+
+                                <img id="imgprofile" src="" data-src-retina="" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+                                <img src="~/assets-front/img/profile-picture.png" alt="" id="imgprofile" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+                            </div>
+
+                            <div class="upload-btn-wrapper " style="cursor:pointer">
+                                <input type="file" name="vrlogo1" id="vr-logo-avatar" class="vrlogo" style="cursor:pointer" secondname="flFrontImage" />
+                                <a class="btn btn-group-lg btn-block  " id="vr-fileupload" style=""><i class="fa fa-upload"></i>  Browse</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <h5 class="top-left p-l-20">Select Diagram Image</h5>
+
+                            <div id="vrlogo2">
+
+                                <img src="~/assets-front/img/profile-picture.png" id="imgprofile" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+
+                                <img id="imgprofile" src="" data-src-retina="" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+                                <img src="~/assets-front/img/profile-picture.png" alt="" id="imgprofile" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+                            </div>
+
+                            <div class="upload-btn-wrapper m-r-5 p-t-35" style="cursor:pointer">
+                                <input type="file" name="vrlogo2" id="vr-logo-avatar" class="vrlogo" style="cursor:pointer" secondname="flDiagramImage" />
+                                <a class="btn btn-default  clientprofilerights" id="vr-fileupload"><i class="fa fa-upload"></i>  Browse</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 " style="margin-bottom:50px;">
+
+                            <h5 class="top-left p-l-20">Select Product's Image</h5>
+
+                            <div id="vrlogo3">
+
+                                <img src="~/assets-front/img/profile-picture.png" id="imgprofile" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+
+                                <img id="imgprofile" src="" data-src-retina="" alt="" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+
+                                <img src="~/assets-front/img/profile-picture.png" alt="" id="imgprofile" style="max-width: 100%; max-height: 100%; " class="img-circle w-100 m-b-40">
+                            </div>
+
+                            <div class="upload-btn-wrapper m-r-5 p-t-35" style="cursor:pointer">
+                                <input type="file" name="vrlogo3" id="vr-logo-avatar" class="vrlogo" style="cursor:pointer" multiple secondname="flProductPhoto" />
+                                <a class="btn-default  " style="cursor:pointer; margin-left: 14px;" id="vr-fileupload"><i class="fa fa-upload"></i>  Browse</a>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+
+                            <h5>
+                                <label for="chkActive" style="margin-top:30px;">Product Type Active</label>
+                                <input type="checkbox" style="margin-top:30px;" id="chkActive" checked="checked">
+                            </h5>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="box-footer">
+
+                        <button type="button" class="btn btn-success" id="btnaddproducttype">Add Product Type</button>
+                        <button type="submit" class="btn btn-default" style="margin-left:50px;">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<script src="~/PageJS/Product/ProdctType/Add.js"></script>

@@ -1,0 +1,435 @@
+
+
+.calendar {
+    padding: 2em 1em;
+    background: white;
+    display: -webkit-inline-box;
+    display: inline-block;
+    width: 95%;
+    margin: 0px 2em;
+}
+
+.calendar p.disabled {
+    cursor: not-allowed;
+    padding: 0 1em;
+    font-size: small;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+.calendar .btn {
+    width: 100%;
+}
+.calendar .remove{
+	padding: 1em;
+}
+.calendar .remove input.fa.fa-circle {
+    font-size: 140em;
+    color: transparent;
+    overflow: hidden;
+}
+.fc-content-skeleton .fc-event{
+	cursor: pointer !important;
+	background: #b4ddd5;
+	border-color: #8abcb2;
+}
+td.fc-event-container .fc-event {
+    height: 5px;
+    padding: 0;
+    color: transparent;
+}
+td.fc-event-container .fc-event.view {
+    height: auto !important;
+    padding: 8px !important;
+    color: white;
+}
+.fc-event, .fc-event:hover, .ui-widget .fc-event {
+    color: #fff;
+    text-decoration: none;
+    margin: 0.5em;
+    padding: 0.5em;
+    cursor: move;
+    font-size: 1em;
+}
+.fc th, .fc td {
+    border: 0;
+    border-bottom: 1px solid #efefef;
+    padding: 0.41em;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    font-size: initial;
+    color: black;
+}
+.fc-ltr .fc-basic-view .fc-day-number {
+    text-align: center;
+    padding: 1em;
+    color: #636163;
+}
+
+.fc-row.fc-week.fc-widget-content {
+    height: auto !important;
+}
+td.fc-day-number.fc-other-month.fc-future, td.fc-day-number.fc-other-month.fc-past {
+    color: #bbb7bb;
+}
+.fc-button-group button, .fc-left button, .fc-right button {
+    background: transparent;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    border: 0;
+}
+.fc-toolbar button:focus {
+    z-index: 5;
+    outline: 0;
+}
+.fc-button{
+	border-bottom: 3px solid transparent !important;
+}
+.fc-toolbar .fc-state-down,.fc-state-down, .fc-state-active {
+	background: transparent !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.0), 0 1px 2px rgba(0, 0, 0, 0.0);
+    border-bottom: 3px solid #000 !important;
+}
+button.fc-today-button.fc-state-disabled {
+    cursor: not-allowed;
+}
+
+.fc-button-group {
+    width: 100%;
+    display: inline-block;
+}
+
+td.fc-event-container .fc-event {
+   
+}
+.fc-border{
+	border: 1px solid #333 !important;
+}
+.fc .fc-toolbar > * > * {
+     float: none; 
+    margin-left: .75em;
+    font-size: 1.5em;
+}
+.fc .fc-toolbar h2{
+	font-size: 2.5em;
+}
+.fc .fc-button-group button{
+	text-transform: capitalize;
+}
+.fc-content-skeleton  {
+    /*max-height: 100px;
+    overflow: scroll;*/
+}
+ .calendar .fc-toolbar button {
+ 	color: black;
+ }
+
+/*Week Agenda */
+.fc-agendaWeek-view .fc-slats table tr {
+    border-bottom: 1px solid #ccc;
+}
+.fc-agendaWeek-view .fc-slats table tr td {
+	padding: 1em;
+}
+
+/*Labels */
+.calendar .label{
+	text-align: left;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	padding: 1em;
+	font-size: inherit;
+}/*Label Colors over */
+
+.label-info{
+    background: rgba(91, 202, 255, 1) !important;
+}
+.label-danger{
+    background: rgba( 255, 76, 64, 1) !important;
+}
+.label-success{
+    background: rgba(76, 217, 100, 1) !important;
+}
+.label-warning{
+    background: rgba(249, 158, 30, 1) !important;
+}
+.label-primary{
+    background: rgba(52, 172, 220, 1) !important;
+}
+.label-default{
+    background: rgba(245, 240, 240, 1) !important;
+    color: #252525;
+}
+.label-inverse{
+    background: rgba(112, 114, 113, 1) !important;
+}
+.fc-day-grid-container.fc-scroller {
+    height: 100%;
+    display: inherit;
+}
+
+
+.fc-unthemed .fc-today {
+	background: #e5f3f1;
+}
+
+
+
+/*Calendar 2*/
+
+
+.calendar-2 {
+    padding: 2em 1em;
+    margin: 1em;
+    height: 730px;
+    position: relative;
+    display: block;
+}
+.calendar-2 .border-red{
+	border: 1px solid #f9735b;
+}
+.calendar-2 .weather{
+	padding: 1.5em;
+}
+.calendar-2 .weather .report{
+	padding-top: 2em;
+}
+.calendar-2 .danger-bg{
+    background: #f9735b;
+    height: inherit;
+}
+.calendar-2 .weather .fa.cloud{
+	font-size: 10em;
+	color: #f9735b;
+	text-align: center;
+}
+.calendar-2 .weather .weather-option{
+	float: left;
+	font-size: 2em;
+	font-weight: 100;
+	color: #808080;
+    letter-spacing: 0.1em;
+    width: 45%
+}
+
+.calendar-2 .weather .celcius {
+    font-size: 5em;
+    font-style: italic;
+    margin-top: 0px;
+    color: #f9735b;
+}
+
+.calendar-2 .calendar p.disabled {
+    cursor: not-allowed;
+    padding: 0 1em;
+    font-size: small;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+.calendar-2 .calendar .btn {
+    width: 100%;
+}
+.calendar-2 .calendar .remove{
+	padding: 1em;
+}
+.calendar-2 .calendar .remove input.fa.fa-circle {
+    font-size: 140em;
+    color: transparent;
+}
+.calendar-2 .fc-content-skeleton .fc-event{
+	cursor: pointer !important;
+	background: #f9735b;
+	border-color: #db563f;
+}
+.calendar-2 td.fc-event-container .fc-event {
+    height: 5px;
+    padding: 0;
+    color: transparent;
+}
+.calendar-2 td.fc-event-container .fc-event.view {
+    height: auto !important;
+    padding: 8px !important;
+    color: white;
+}
+.calendar-2 .fc th, .fc td {
+    border: 0;
+    border-bottom: 1px solid #efefef;
+    padding: 0.2em;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    font-size: initial;
+    color: #f9735b;
+}
+.calendar-2 .fc-ltr .fc-basic-view .fc-day-number {
+    text-align: center;
+    padding: 0.2em;
+    font-weight: 400;
+    color: #bb371f;
+}
+
+.calendar-2 .fc-row.fc-week.fc-widget-content {
+    height: auto !important;
+}
+.calendar-2 td.fc-day-number.fc-other-month.fc-future, td.fc-day-number.fc-other-month.fc-past {
+    color: #000;
+}
+.calendar-2 .fc-button-group button, .fc-left button, .fc-right button {
+    background: transparent;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    border: 0;
+}
+.calendar-2 .fc-toolbar button:focus {
+    z-index: 5;
+    outline: 0;
+}
+.calendar-2 .fc-button{
+	border-bottom: 3px solid transparent !important;
+}
+.calendar-2 .fc-toolbar .fc-state-down,.fc-state-down, .fc-state-active {
+	background: transparent !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.0), 0 1px 2px rgba(0, 0, 0, 0.0);
+    border-bottom: 3px solid #000 !important;
+}
+.calendar-2 button.fc-today-button.fc-state-disabled {
+    cursor: not-allowed;
+}
+
+.calendar-2 .fc-button-group {
+    width: 100%;
+    display: inline-block;
+}
+
+.calendar-2 td.fc-event-container .fc-event {
+   
+}
+.calendar-2 .fc-border{
+	border: 1px solid #333 !important;
+}
+.calendar-2 .fc .fc-toolbar > * > * {
+     float: none; 
+    margin-left: .75em;
+    font-size: 1.5em;
+}
+.calendar-2 .fc .fc-toolbar h2{
+	font-size: 2.5em;
+	color: #f9735b;
+}
+.calendar-2 .fc .fc-button-group button{
+	text-transform: capitalize;
+	color: #f9735b;
+}
+.calendar-2 .fc-content-skeleton  {
+    /*max-height: 100px;
+    overflow: scroll;*/
+}
+
+
+/*Week Agenda */
+.calendar-2 .fc-agendaWeek-view .fc-slats table tr {
+    border-bottom: 1px solid #ccc;
+}
+.calendar-2 .fc-agendaWeek-view .fc-slats table tr td {
+	padding: 1em;
+}
+
+
+.calendar-2 .fc-unthemed .fc-today {
+	background: #fdd1c9;
+}
+.calendar-2 .share{
+	color: white;
+}
+.calendar-2 .share .fa.fa-share-alt{
+	font-size: 1.6em;
+	padding: 1em;
+}
+.calendar-2 .calender {
+    text-align: right;
+    width: 100%;
+    top: 45%;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    font-size: 2.3em;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+}
+.calendar-2 .calender .month{
+	float: right;
+}
+.calendar-2 .calender .date{
+	font-size: 1em;
+}
+
+.calendar-2 .input {
+    position: absolute;
+    bottom: 35%;
+    right: 3%;
+    width: 86%;
+    padding: 3%;
+}
+.calendar-2 input.form-control {
+	background: transparent;
+    border: 0 !important;
+    border-bottom: 1px solid white !important;
+    color: white;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    font-weight: 100;
+    text-align: right;
+    letter-spacing: 0.1em;
+}
+.calendar-2 .input-group-addon, .calendar-2 .input-group-addon:hover, .calendar-2 .input-group-addon:focus {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.calendar-2 ::-webkit-input-placeholder {
+   color: white;
+}
+
+.calendar-2 :-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+.calendar-2 ::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+.calendar-2 :-ms-input-placeholder {  
+   color: white;  
+}
+
+.calendar-2 .calender small {
+    font-size: 0.5em;
+    font-weight: 100;
+    letter-spacing: 0;
+}
+
+.calendar-2 .fc-content-skeleton table tbody {
+    position: absolute;
+    left: 0;
+}
+.calendar-2  .fc-toolbar button {
+    color: red;
+}
+.col-md-4.red-bg {
+    min-height: 604px;
+    height: auto;
+}.fc-event {
+    border: none;
+}
+
+/*Add Event*/
+input#event-id {
+    padding: 0.51em;
+    width: 100%;
+}

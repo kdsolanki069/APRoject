@@ -1,0 +1,41 @@
+ul{
+	list-style: none;
+}
+ .icon-hover {
+    /*padding: 1em;*/
+    display: table;
+}
+
+.g-icon-hover a{
+	float: left;
+}
+ .icon-hover a, .g-icon-hover a, .icon a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    color: #252525;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
+}
+.fa-hover a i, .g-icon-hover a, .icon a{
+	font-size: 1em;
+	margin-right: 6px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon-hover a:hover, .g-icon-hover a:hover, .icon a:hover{
+	background: rgba(76, 217, 100, 1);
+	font-size: 1.5em;
+	color: white;
+	font-weight: 300;
+	text-decoration: none;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

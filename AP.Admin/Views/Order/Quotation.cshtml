@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Quotation";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+
+<link href="~/PageCSS/Order.css" rel="stylesheet" />
+
+<section class="content-header">
+    <h1>
+        Biling Detail
+        <small>Create New Quotation</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Biling Detail</a></li>
+        <li class="active">Create New Quotation</li>
+    </ol>
+</section>
+<!-- Example DataTables Card-->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">&nbsp; Quotation Detail</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <button class="accordion">Company Details</button>
+
+                    <div class="panel">
+                        <div class="form-row">
+
+                            <div class="form-group col-md-10">
+                                <label for="cprod">Select Company:</label>
+                                <select class="form-control select2 requiredfield" id="ddlcname"></select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="accordion">Add Products</button>
+                    <div class="panel" id="panel2">
+
+
+                        </br>
+                        <div id="pdata">
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label for="psize">No</label>
+
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="psize">Product Specification</label>
+
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="pspecs2">Unit Price</label>
+
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="pprice">Quantity</label>
+
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="pdiscount">Amount</label>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <input type="text" class="form-control" id="txtpno1" placeholder="Product Number" value="1" disabled>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" id="txtpspec1" placeholder="Product Specification">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="number" class="form-control" id="txtunitprice1" onchange="GetAmount(1)" placeholder="Unit Price">
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <input type="number" class="form-control" id="txtquantity1" onchange="GetAmount(1)" value="1" placeholder="Quantity">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="number" class="form-control" id="txtamount1" placeholder="Amount" disabled>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <button type="button" class="btn btn-danger btn-sm pull-right" style="margin:0px 0px 5px 10px; display:none;" id="btnRemoveproduct">- Remove</button>
+                        <button type="button" class="btn btn-info btn-sm pull-right" style="margin-bottom:5px;" id="btnaddproduct">+ Add</button>
+
+
+                    </div>
+
+                    <button class="accordion">Quotation Specification</button>
+                    <div class="panel" style="margin-top:30px;">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="QComments">Comments or Special Instructions</label>
+                                <input type="text" class="form-control" value="Resin Bonded Diamond Wheel " id="QComments" placeholder="Comments or Special Instructions">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="QchkApplyGST" style="margin-top:30px;">Apply GST</label>
+                                <input type="checkbox" style="margin-top:30px;" id="QchkApplyGST">
+                            </div>
+
+
+
+                            <div class="form-group col-md-6">
+                                <label for="QFreight">Dilivery Time</label>
+                                <input type="text" class="form-control" id="QDiliveryTime" placeholder="Dilivery Time ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cprod">ShipVia:</label>
+                                <select class="form-control select2 " id="ddlShipVia">
+                                    <option>Courier</option>
+                                    <option>Post</option>
+                                    <option>office Pickup </option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="" style="margin-top:2em;margin-bottom:2em;">
+                        <button type="submit" class="btn btn-info btn-lg" id="btnAddQuotation">Submit</button>
+                        <button class="btn btn-secondary btn-lg pull-right" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<script src="~/PageJS/Order/Quotation/QuotationAdd.js"></script>

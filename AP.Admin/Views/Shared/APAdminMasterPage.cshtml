@@ -1,0 +1,340 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/AdminDesign/New/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/AdminDesign/New/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/AdminDesign/New/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/AdminDesign/New/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="~/AdminDesign/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/AdminDesign/vendor/select2/dist/css/select2.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminDesign/New/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/AdminDesign/New/dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <script src="~/AdminDesign/vendor/jquery/jquery.min.js"></script>
+    <script src="~/PageJS/common/validation.js"></script>
+    <!-- DataTables -->
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../../../AdminDesign/images/preloader.svg') 50% 50% no-repeat rgb(249,249,249);
+            opacity: .8;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <script>
+    var  PhotoUrl = '@System.Configuration.ConfigurationManager.AppSettings["PhotoUrl"]';
+
+    </script>
+
+    <div class="loader" id="loader" style="display:none;"></div>
+    <!-- Site wrapper -->
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="../Home/index" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>P</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Associated</b>Products</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <div class="navbar-custom-menu">
+
+                </div>
+            </nav>
+        </header>
+
+        <!-- =============================================== -->
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+
+
+
+
+                <ul class="sidebar-menu" data-widget="tree">
+
+                    <li>
+                        <a href="/home/index">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Company/List">
+                            <i class="fa fa-building"></i>
+                            <span>Company</span>
+
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="/WorkSheet/Detail">
+                            <i class="fa fa-files-o"></i> <span>Work Book</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-fw fa-table"></i>
+                            <span>Inventory</span>
+
+                        </a>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-fw fa-file"></i>
+                            <span>Order</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/PurchaseOrder/List"> <i class="fa fa-circle-o"></i>Purchase Order OF AP</a></li>
+                            <li><a href="/PurchaseOrder/SaleList"> <i class="fa fa-circle-o"></i>Sale Order Of AP</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-text"></i>
+                            <span>Biling Detail</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li><a href="/order/ChallanList"> <i class="fa fa-circle-o"></i>Challan</a></li>
+                            <li><a href="/order/QuotationList"> <i class="fa fa-circle-o"></i>Quotation</a></li>
+                            <li><a href="/order/ProformaList"><i class="fa fa-circle-o"></i> Proforma</a></li>
+                            <li><a href="/Order/ReplacementList"><i class="fa fa-circle-o"></i> Replacement</a></li>
+                            <li><a href="/Order/PriceChangeQuotationList"><i class="fa fa-circle-o"></i> Price Change Quotation</a></li>
+
+
+
+                        </ul>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-gear fa-spin"></i> <span>Product</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Product/Type"> <i class="fa fa-circle-o"></i>Product Type</a></li>
+                            <li><a href="/Product/List"> <i class="fa fa-circle-o"></i>Product</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- =============================================== -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="Modalalert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="txtmodaltitle"></h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="txttext">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+
+                        <a class="btn btn-primary" href="" id="btnok">Ok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*display error and succcess message*@
+        <div class="modal fade slide-up" id="mySuccess" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content-wrapper">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h5 class="text-center m-b-20">
+                                <span id="Sucesstext"> CREDIT CARD </span>
+                            </h5>
+
+                            <div class="text-center m-t-10">
+                                <button class="btn btn-default btn-cons" data-dismiss="modal" aria-hidden="true" id="btnmySuccessok">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+        </div>
+
+        <div class="modal fade" id="Modalvalidation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-danger" id="">Please Select Or Enter Some Data</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-danger" id="">All Red fields are required.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.4.0
+                </div>
+                <strong>Copyright &copy; 2019 <a href="ABC">ABC</a>.</strong> All rights
+                reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+            immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div>
+        <!-- ./wrapper -->
+        <script src="~/AdminDesign/vendor/jquery/jquery.min.js"></script>
+        <!-- jQuery 3 -->
+        <script src="~/AdminDesign/New/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="~/AdminDesign/New/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/AdminDesign/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="~/AdminDesign/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <link rel="stylesheet" href="~/AdminDesign/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
+        <!-- SlimScroll -->
+        <script src="~/AdminDesign/New/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/AdminDesign/New/bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- AdminLTE App -->
+        <script src="~/AdminDesign/New/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="~/AdminDesign/New/dist/js/demo.js"></script>
+        <!-- bootstrap datepicker -->
+        <script src="~/AdminDesign/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <!-- Select2 -->
+        <script src="~/AdminDesign/vendor/ckeditor/ckeditor.js"></script>
+        <script src="~/AdminDesign/vendor/select2/dist/js/select2.full.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.sidebar-menu').tree()
+                $('.datepickerdate').datepicker({
+                    autoclose: true,
+                    todayHighlight: true,
+                    format: 'dd/mm/yyyy'
+                });
+                $('.select2').select2()
+
+            })
+
+
+
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            function showLoader() {
+                $(".loader").fadeIn("slow");
+            }
+            function hideLoader() {
+                $(".loader").fadeOut("slow");
+            }
+        </script>
+
+
+</body>
+
+</html>

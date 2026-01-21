@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "contactUs";
+    Layout = "~/Views/Shared/APMasterPage.cshtml";
+}
+<section class="page-title" style="background-image:url(../../../Machinery/images/background/2.jpg)">
+    <div class="auto-container">
+        <h1>Contact Us</h1>
+        <ul class="page-breadcrumb">
+            <li><a href="/Home/index">Home</a></li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Contact Section Two -->
+<section class="contact-section-two">
+    <div class="auto-container">
+        <div class="sec-title">
+            <h2>Get Touch With Us</h2>
+
+        </div>
+        <div class="row clearfix">
+            <div class="carousel-column col-md-5 col-sm-12 col-xs-12">
+                <div class="inner-column">
+                    <div class="branches-carousel owl-carousel owl-theme owl-loaded owl-drag">
+
+
+
+
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-0px, 0px, 0px); transition: all 0.7s ease 0s; ">
+
+                                <div class="owl-item active" style="width: 570px; margin-right: 0px;">
+                                    <div class="slide">
+                                        <div class="branch-info-box">
+                                            <div class="row clearfix">
+
+                                                <div class="info-column col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="lucation">ABC</div>
+                                                    <ul>
+                                                        <li>
+                                                            <span class="icon flaticon-place"></span>
+
+                                                            <p>ABC</p>
+                                                            <p>PUNIT MARG,MANINAGAR</p>
+                                                            <p>AHMEDABAD-380008 GUJARAT,INDIA.</p>
+                                                        </li>
+                                                        <li>
+                                                            <span class="icon flaticon-support"></span>
+                                                            <h5>Call Us On</h5>
+                                                            <p><a href="tel:+917096197546">ABC</a></p>
+                                                        </li>
+                                                        <li>
+                                                            <span class="icon flaticon-plane"></span>
+                                                            <h5>Mail Us at</h5>
+                                                            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ABC" target="_blank">ABC</a></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="map-column col-md-7 col-sm-12 col-xs-12">
+                <div class="map-outer">
+                    <!--Map Canvas-->
+                    <div style="width:100%;height:400px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.618151857511!2d72.60540824251305!3d23.001064943574843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85dc47cfffff%3A0xb69c66f27cff327a!2sAssociated+Products!5e0!3m2!1sen!2sin!4v1550641632390" width="700" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Contact Section Two -->
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Title Column -->
+            <div class="image-column col-md-4 col-sm-12 col-xs-12">
+                <div class="inner-column">
+                    <div class="image"><img src="./Machinery - HTML Template _ Contact Us 01_files/image-6.png" alt=""></div>
+                </div>
+            </div>
+            <!-- Form Column -->
+            <div class="form-column col-md-8 col-sm-12 col-xs-12">
+                <div class="inner-column">
+                    <div class="sec-title">
+                        <h2>Send Message Us</h2>
+                        <div class="text">Don not hestiate to ask us something, Our customer support team always ready to help you,they will support you 24/7.</div>
+                    </div>
+                    <!--Contact Form-->
+                    <div class="contact-form style-two">
+                        <form>
+                            <div class="row clearfix">
+                                <div class="column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="txtName" value="" placeholder="Your Name*" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" value="" id="txtEmail" placeholder="Email Address*" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="subject" value="" id="txtSubject" placeholder="Subject" required="">
+                                    </div>
+                                </div>
+                                <div class="column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Massage" id="txtMassage"></textarea>
+                                    </div>
+                                </div>
+                                <div class="column col-md-12 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <button type="button" id="btnsendmail" class="theme-btn">Submit Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Contact Form Section -->
+<script src="~/PageJS/SendMail.js"></script>

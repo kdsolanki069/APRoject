@@ -1,0 +1,11 @@
+
+.csk-title h2, .csk-title h3 {
+	display: inline-block;
+	font-size: 40px;
+}
+.csk{
+	font-size: 30px;
+}
+tbody.csk1 tr td {
+	padding: 10px;
+}

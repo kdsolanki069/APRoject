@@ -1,0 +1,119 @@
+a:hover{
+	opacity: 1;
+}
+.toggled .aText {
+    opacity: 0 !important;
+}
+.navbar-default {
+    border-color: rgba(255,255,255,1);
+    height: 51px;
+}
+a.navbar-brand {
+	background: rgba(255, 255, 255, 1) url(../images/logo-lite.png) no-repeat center;
+	background-size: 150px 48px;
+    border-right: 1px solid rgba(255,255,255,1);
+}
+.sidebar-nav{
+	border-bottom: 0;
+}
+.metismenu li li:hover, .metismenu li li:hover a, .metismenu li li a:hover{
+	background: transparent;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+	background-color: rgb(255, 255, 255)
+}
+.toggled .navbar-brand{
+	background: rgba(255, 255, 255, 1);
+}
+.sidebar-nav {
+	background: rgba(255, 255, 255, 1)
+}
+.sidebar-nav ul li {
+	width: 100%;
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+#sidebar-wrapper {
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1)
+}
+.metismenu>li.active>a{
+	border-left: 4px solid rgb(76, 217, 100);
+	background: rgba(255, 255, 255, 1)
+}
+.sidebar-nav ul ul a {
+	padding: .0 2em;
+	background: rgba(255, 255, 255, 1)
+}
+
+.sidebar-nav ul a span {
+	color: rgba(0,0,0,0.6);
+}
+.sidebar-nav ul a span.aText {
+    color: rgba(0,0,0,0.6);
+    font-size: 98%;
+}
+.sidebar-nav ul > li:hover > a span , .sidebar-nav ul > li > a:hover span , .sidebar-nav ul > li > a span:hover {
+	color: rgba(0,0,0,0.9);
+}
+.emails ul .email-item:hover {
+	border-left: 4px solid rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1)
+}
+.sidebar-nav ul li li.active a {
+    background: rgba(255, 255, 255, 1)
+}
+ul.metismenu li ul {
+    border-left: 0;
+}
+.metismenu li.active > li a {
+	border: 0;
+	border-left: 0;
+}
+.sidebar-nav li.active>a>span{
+	color: rgba(0, 0, 0, 0.9)
+}
+
+.metismenu li.active li a {
+    background: rgba(255, 255, 255, 1)
+}
+.sidebar-nav>ul>li>a{
+	border-left: 4px solid transparent;
+}
+.sidebar-nav {
+    width: 220px !important;
+}
+.ink {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    background: rgba(0,0,0, 0.1);
+}
+
+/*Media Queries issues*/
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	a.navbar-brand{
+		background: rgba(255, 255, 255, 1) !important;
+	}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	a.navbar-brand{
+		background: rgba(255, 255, 255, 1) !important;
+	}
+}

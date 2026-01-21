@@ -1,0 +1,146 @@
+.ct-line {
+    fill: none !important;
+    stroke-width: 4px;
+}
+/*Profit /Weekly/Monthly/Perannum*/
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut, .ct-series-a .ct-area, .ct-series-a .ct-slice-pie {
+    stroke: rgba(76, 217, 100, 1);
+    fill: rgba(171, 219, 145, 0.8);
+}
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut,.ct-series-b .ct-area, .ct-series-b .ct-slice-pie {
+    stroke: rgba( 255, 76, 64, 1);
+    fill: rgba( 255, 145, 150, 0.8);
+}
+.ct-series-c .ct-bar, .ct-series-c .ct-line, .ct-series-c .ct-point, .ct-series-c .ct-slice-donut,.ct-series-c .ct-area, .ct-series-c .ct-slice-pie {
+    stroke: rgba(91, 202, 255, 1);
+    fill: rgba(153, 218, 218, 0.8);
+}
+.ct-series-d .ct-bar, .ct-series-d .ct-line, .ct-series-d .ct-point, .ct-series-d .ct-slice-donut,.ct-series-d .ct-area, .ct-series-d .ct-slice-pie {
+    stroke: rgba(249, 158, 30, 1);
+    fill: rgba(255, 194, 123, 0.8);
+}
+.ct-series-e .ct-bar, .ct-series-e .ct-line, .ct-series-e .ct-point, .ct-series-e .ct-slice-donut,.ct-series-e .ct-area, .ct-series-e .ct-slice-pie {
+    stroke: rgba(52, 172, 220, 1);
+    fill: rgba(112, 177, 201, 0.8);
+}
+.ct-series-f .ct-bar, .ct-series-f .ct-line, .ct-series-f .ct-point, .ct-series-f .ct-slice-donut,.ct-series-f .ct-area, .ct-series-f .ct-slice-pie {
+    stroke: rgba(112, 114, 113, 1);
+    fill: rgba(112, 114, 113, 0.8);
+}
+.ct-series-g .ct-bar, .ct-series-g .ct-line, .ct-series-g .ct-point, .ct-series-g .ct-slice-donut, .ct-series-g .ct-area, .ct-series-g .ct-slice-pie {
+    stroke: rgba(245, 240, 240, 1);
+    fill: rgba(245, 240, 240, 0.8);
+}
+.pie .ct-series-a .ct-bar, .pie .ct-series-a .ct-line, .pie .ct-series-a .ct-point, .pie .ct-series-a .ct-slice-donut, .pie  .ct-series-a .ct-area, .pie .ct-series-a .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(171, 219, 145, 0.8);
+}
+.pie .ct-series-b .ct-bar, .pie .ct-series-b .ct-line, .pie .ct-series-b .ct-point, .pie .ct-series-b .ct-slice-donut, .pie .ct-series-b .ct-area, .pie .ct-series-b .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba( 255, 145, 150, 0.8);
+}
+.pie .ct-series-c .ct-bar, .pie .ct-series-c .ct-line, .pie .ct-series-c .ct-point, .pie .ct-series-c .ct-slice-donut, .pie .ct-series-c .ct-area, .pie .ct-series-c .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(153, 218, 218, 0.8);
+}
+.pie .ct-series-d .ct-bar, .pie .ct-series-d .ct-line, .pie .ct-series-d .ct-point, .pie .ct-series-d .ct-slice-donut, .pie .ct-series-d .ct-area, .pie .ct-series-d .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(255, 194, 123, 0.8);
+}
+.pie .ct-series-e .ct-bar, .pie .ct-series-e .ct-line, .pie .ct-series-e .ct-point, .pie .ct-series-e .ct-slice-donut, .pie .ct-series-e .ct-area, .pie .ct-series-e .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(112, 177, 201, 0.8);
+}
+.pie .ct-series-f .ct-bar, .pie .ct-series-f .ct-line, .pie .ct-series-f .ct-point, .pie .ct-series-f .ct-slice-donut, .pie .ct-series-f .ct-area, .pie .ct-series-f .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(112, 114, 113, 0.8);
+}
+.pie .ct-series-g .ct-bar, .pie .ct-series-g .ct-line, .pie .ct-series-g .ct-point, .pie .ct-series-g .ct-slice-donut, .pie  .ct-series-g .ct-area, .pie .ct-series-g .ct-slice-pie {
+    stroke: rgba(255,255,255,0.5);
+    fill: rgba(245, 240, 240, 0.8);
+}
+.animated .ct-series-a   {
+      stroke-dasharray: 1093;
+      stroke-dashoffset: 1093;
+      -webkit-animation: draw 1s 0.1s ease both;
+              animation: draw 1s 0.10s ease both;
+      fill: none;
+      /*stroke: #ada8b6;*/
+      opacity: 1;
+    }
+
+    .animated .ct-series-b {
+      stroke-dasharray: 1665;
+      stroke-dashoffset: 1665;
+      -webkit-animation: draw 1s 0.25s ease both;
+              animation: draw 1s 0.25s ease both;
+      fill: none;
+      stroke: #61c9a8;
+      opacity: 1;
+    }
+
+    .animated .ct-series-c {
+      stroke-dasharray: 1644;
+      stroke-dashoffset: 1644;
+      -webkit-animation: draw 1s 0.5s ease both;
+              animation: draw 1s 0.5s ease both;
+      fill: none;
+      stroke: #ffeedb;
+      opacity: 1;
+    }
+
+    .animated .ct-series-d {
+      stroke-dasharray: 1540;
+      stroke-dashoffset: 1540;
+      -webkit-animation: draw 1s 0.75s ease both;
+              animation: draw 1s 0.75s ease both;
+      fill: none;
+      stroke: #a53860;
+      opacity: 1;
+    }*/
+
+    @-webkit-keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .ct-labels span{
+        font-size: inherit;
+        font-weight: 300;
+        color: #555;
+    }
+
+    /*Highcharts*/
+    text{
+    	text-decoration: none !important;
+    }
+    .highcharts-button{
+    	display: none;
+    }
+    .highcharts-button:last-child{
+    	display: block !important;
+    	cursor: pointer !important;
+    }
+    text:last-child{
+    	/*display: none;*/
+    }
+    .highcharts-tooltip path{
+    	fill: #353535;
+    	stroke: #000;
+    }
+    .highcharts-tooltip tspan, .highcharts-tooltip table b{
+    	fill: white !important;
+    	color: white !important;
+    }
+    .highcharts-data-labels.highcharts-series-0.highcharts-tracker text{
+    	text-shadow: 0 0 6px rgba(0,0,0,0), 0 0 3px rgba(0,0,0,0) !important;
+    }
+    .highcharts-data-labels.highcharts-series-0.highcharts-tracker tspan{
+    	fill: rgba(0,0,0,0.4);
+    }

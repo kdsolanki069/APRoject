@@ -1,0 +1,394 @@
+@import url("../assets/font-awesome-4.6.3/css/font-awesome.min.css");
+/*lineicons-gh-pages css*/
+
+.cards .card {
+    min-height: 100px;
+}
+
+.panel-info, .panel-info>.panel-heading, .panel-primary{
+	border-color: transparent;
+}
+
+/* Sparkline Charts*/
+
+span.sparkline_one canvas,
+span.sparkline_two canvas {
+    width: 100px !important;
+}
+
+.progress-menu {
+    margin: 2em 0;
+}
+
+.progress-menu .progress {
+    height: 10px;
+}
+
+
+/*======Timeline===*/
+
+.timeline-icons {
+    display: -webkit-box;
+}
+
+.timeline-icons {
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.timeline-icons a{
+	font-size: 14px;
+	color: rgba(0,0,0,0.8);
+    float: left;
+}
+.timeline-icons span{
+	color: rgba(0,0,0,0.9);
+}
+.timeline-icons li {
+    margin: 0 12px;
+    display: inline-block;
+    float: left;
+    width: 28%;
+    text-align: left;
+}
+.timeline-icons i {
+    font-size: 36px;
+    color: rgba(76, 176, 218, 1);
+    margin-right: 6px;
+    float: left;
+}
+
+.timeline {
+    list-style: none;
+    margin: 20px 0 15px;
+    padding: 0;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.timeline-action:before {
+    width: 0px;
+    height: 0px;
+    left: -8px;
+    top: 4px;
+    content: '';
+    position: absolute;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid rgba(76,176,218,0.6);
+    border-top: 8px solid transparent;
+}
+
+.timeline-horizontal .timeline-milestone {
+    border-top: 2px solid #00637d;
+    display: inline;
+    float: left;
+    margin: 20px 0 0 0;
+    padding: 40px 0 0 0;
+}
+
+.timeline-horizontal .timeline-milestone:before {
+    top: -17px;
+    left: auto;
+}
+
+.timeline-horizontal .timeline-milestone.is-completed:after {
+    top: -17px;
+    left: 0;
+}
+
+.timeline-milestone {
+    border-left: 8px solid rgba(76, 176, 218, 1);
+    margin: 0 0 0 20px;
+    padding: 0px 14px 15px 26px;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.timeline-milestone:last-child {
+    border-left: 8px solid transparent;
+}
+
+.timeline-milestone:before {
+    border: 5px solid rgba(76, 176, 218, 1);
+    border-radius: 50%;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    background: rgba(76, 176, 218, 1);
+    display: block;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    left: -20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 22px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.timeline .icon1-before:before {
+    content: "\f095";
+}
+
+.timeline .icon2-before:before {
+    content: "\f007";
+}
+
+.timeline .icon3-before:before {
+    content: "\f041";
+}
+
+.timeline-milestone.is-completed:before {
+    background-color: #00637d;
+}
+
+.timeline-milestone.is-completed:after {
+    color: #FFF;
+    content: "\f00c";
+    display: block;
+    font-family: "FontAwesome";
+    line-height: 32px;
+    position: absolute;
+    top: 0;
+    left: -17px;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.timeline-milestone.is-future:before {
+    background-color: #8DACB8;
+    border: 0;
+}
+
+.timeline-milestone.is-future .timeline-action .title {
+    color: #8DACB8;
+}
+
+.timeline-action {
+    background-color: #FFF;
+    padding: 6px;
+    position: relative;
+    top: 0px;
+    border: 1px dashed rgba(76,176,218,0.6);
+}
+
+.timeline-action.is-expandable .title {
+    cursor: pointer;
+    position: relative;
+}
+
+.timeline-action.is-expandable .title:after {
+border: 5px solid #4cb0da;
+    border-color: transparent transparent transparent #4cb0da;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+    right: 5px;
+}
+.content {}
+
+.displaynone {
+    display: none;
+}
+
+.timeline-action.is-expandable.is-expanded .title:after {
+    border-color: #fff transparent transparent transparent;
+    top: 10px;
+    right: 5px;
+}
+.timeline-action p{
+	font-size: 12px;
+	color: rgba(0,0,0,0.8);
+	padding: 10px 15px 0px 10px;
+}
+
+.timeline-action.is-expandable.is-expanded .content {
+    display: block;
+}
+
+.timeline-action .title,
+.timeline-action .content {
+    word-wrap: break-word;
+}
+
+.timeline-action .title {
+    /*color: rgba(255, 255, 255, 1);*/
+    font-size: 12px;
+    margin: 0;
+}
+
+.timeline-action .content p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.timeline-action .content {
+    font-size: 14px;
+}
+
+
+/*  ## Time line*/
+/* Chat App */
+.chat-app .goback {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    line-height: 2em;
+    background: rgba(0,0,0,0.05);
+}
+.chat-app .goback a{
+    color: white;
+    width: 40px;
+    text-align: center;
+    height: 50px;
+    display: inline-block;
+}
+.chat-app .panel-title {
+    margin-left: 80px;
+    line-height: 0;
+    font-size: 1.5em;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: white;
+}
+.chat-app .panel-heading {
+    background: #827DCF !important;
+    height: 50px;
+    color: white !important;
+    box-shadow: 0px 3px 0px rgba(0,0,0,0.19);
+}
+.chat-app .panel-heading .chat-img{
+    width: 40px;
+    float: left;
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    background: white;
+    border-radius: 100%;
+}
+.chat-app .setting-icon-menu{
+    color: white;
+}
+.chat-app .time{
+    padding-bottom: 1em;
+}
+.chat-app .message {
+    background: rgba(130, 125, 207,1);
+    padding: 1em;
+    margin: 0.5em;
+    color: white;
+    width: 80%;
+    float: left;
+    letter-spacing: 0.051em;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+}
+.chat-app .message.mine {
+    background: rgba(130, 125, 207,0.1);
+    color: rgba(72, 72, 72, 1);
+    float: right;
+}
+
+.chat-app .panel-footer {
+    display: inline-block;
+    width: 100.4%;
+    margin-top: 18px;
+    margin-bottom: -6px;
+    margin-left: -1px;
+}
+.chat-app .panel-footer input{
+    width: 80%;
+    float: left;
+}
+.chat-app .panel-footer .btn{
+    width: 20%;
+    float: right;
+}
+
+
+/*=====Map======*/
+
+
+/* Specific mapael css class are below
+         * 'mapael' class is added by plugin
+        */
+
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: #fff;
+    moz-opacity: 0.80;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #232323;
+}
+
+.mapael .map {
+    background: transparent !important;
+    margin: 1em 0;
+}
+.areaLegend, .plotLegend{
+	display: none;
+}
+
+/* For all zoom buttons */
+
+.mapael .zoomButton {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    left: 10px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+/* Reset Zoom button first */
+
+.mapael .zoomReset {
+    top: 10px;
+}
+
+
+/* Then Zoom In button */
+
+.mapael .zoomIn {
+    top: 30px;
+}
+
+
+/* Then Zoom Out button */
+
+.mapael .zoomOut {
+    top: 50px;
+}

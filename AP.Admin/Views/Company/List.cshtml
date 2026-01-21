@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+
+
+<section class="content-header">
+    <h1>
+        Company
+        <small>Company Detail</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Company</a></li>
+        <li class="active">Company Detail</li>
+    </ol>
+    <div class="row"></div>
+    <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom: 10px;margin-top: 10px;">
+        <div class="col-md-4 pull-right">
+            <button type="button" class="btn btn-success pull-right" id="btnAdd">+ Add</button>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Company List</h3>
+                    <div class="col-md-1 pull-right">
+                        <a href="" class=" pull-right" style="margin-bottom: 10px; margin-right: 0px;">
+                            <button type="button" id="btnprint" class="btn btn-success">
+                                <span class="glyphicon glyphicon-download-alt"></span> Print
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 pull-right">
+
+                        <div class="form-group">
+                            <select name="ddltype" id="ddltype" data-init-plugin="select2" class=" select2 " style="width:100%">
+                                <option value="1" selected>Parcel </option>
+                                <option value="2">Cover </option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="tbdata" class="table-responsive">
+                        <table class="table table-bordered" id="CompanyTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>E-mail</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>E-mail</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                            <tbody id="CompanyData">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<!-- Example DataTables Card-->
+
+
+<div class="modal fade" id="CompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="pull-left col-md-7">
+                    <h2 class="modal-title" id="exampleModalLabel"><span class="clsbtntext">Add Company</span> Details</h2>
+                </div>
+                @*<div class="col-md-4 pull-right">
+                        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#ImportModal">+ Import</button>
+                    </div>*@
+
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="form-group">
+                    <label for="cname">Company Name:</label>
+                    <input type="text" class="form-control requiredfield" id="cname" placeholder="Enter Name" name="cname">
+                </div>
+
+                <div class="form-group">
+                    <label for="ccontactname">Contact PersonName :</label>
+                    <input type="text" class="form-control " id="ccontactname" placeholder="Enter Contact PersonName" name="ccontactname">
+                </div>
+                <div class="form-group">
+                    <label for="cphone">GST No:</label>
+                    <input type="text" class="form-control" id="cgst" placeholder="Enter GST No" name="cgst">
+                </div>
+                <div class="form-group">
+                    <label for="caddress">Address:</label>
+                    <input type="text" class="form-control" id="caddress" placeholder="Enter Address" name="caddress">
+                </div>
+                <div class="form-group">
+                    <label for="cstate">State:</label>
+                    <select name="cstate" id="cstate" class="form-control  ">
+                        <option value="">Select State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="ccountry">Country:</label>
+                    <input type="text" class="form-control" id="ccountry" placeholder="Enter Country" value="India" name="ccountry">
+                </div>
+
+                <div class="form-group">
+                    <label for="cemail">Pin Code:</label>
+                    <input type="email" class="form-control" id="cpincode" placeholder="Enter Pin Code" name="cpincode">
+                </div>
+                <div class="form-group">
+                    <label for="cphone">Phone No:</label>
+                    <input type="text" class="form-control" id="cphone" placeholder="Enter Number" name="cphone">
+                </div>
+                <div class="form-group">
+                    <label for="cphone">Email No:</label>
+                    <input type="text" class="form-control" id="cemail" placeholder="Enter Email" name="cemail">
+                </div>
+                <input type="hidden" id="cid" value="-1" />
+                <button type="button" class="btn btn-info clsbtntext" id="btnaddcompany">Add Company</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="ImportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Import Company Details</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("ImportCompany", "Company", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="modal-body">
+                    <div class="container">
+                        <h2></h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="cname">Select File Name:</label>
+                                <input type="file" class="form-control" id="cfile" placeholder="Select File" name="cfile">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-info">Import</button>
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/PageJS/Company/CompanyList.js"></script>

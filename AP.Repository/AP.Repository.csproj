@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96CFF60D-2288-4D14-BA97-16867658F825}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AP.Repository</RootNamespace>
+    <AssemblyName>AP.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ICompanyRepositories.cs" />
+    <Compile Include="Interfaces\IDashboardRepositories.cs" />
+    <Compile Include="Interfaces\IOrderDetailRepositories.cs" />
+    <Compile Include="Interfaces\IOrderRepositories.cs" />
+    <Compile Include="Interfaces\IOrderTransactionRepositories.cs" />
+    <Compile Include="Interfaces\IProductRepositories.cs" />
+    <Compile Include="Interfaces\IProductTypeRepositories.cs" />
+    <Compile Include="Interfaces\IUserDetailsRepository.cs" />
+    <Compile Include="Interfaces\IWorkSheetRepositories.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DashboardRepositories.cs" />
+    <Compile Include="Repositories\OrderTransactionRepositories.cs" />
+    <Compile Include="Repositories\ProductTypeRepositories.cs" />
+    <Compile Include="Repositories\CompanyRepositories.cs" />
+    <Compile Include="Repositories\OrderDetailRepositories.cs" />
+    <Compile Include="Repositories\OrderRepositories.cs" />
+    <Compile Include="Repositories\ProductRepositories.cs" />
+    <Compile Include="Repositories\UserDetailsRepository.cs" />
+    <Compile Include="Repositories\WorkSheetRepositories.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AP.Common\AP.Common.csproj">
+      <Project>{8ccb54ae-ff2b-4ede-af00-240e81fbc045}</Project>
+      <Name>AP.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AP.Entity\AP.Entity.csproj">
+      <Project>{c9213791-1de2-4854-8bf8-c21bb05dae0d}</Project>
+      <Name>AP.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AP.Model\AP.Model.csproj">
+      <Project>{a0fce6c4-e4bf-4ac2-864c-a9f28314b771}</Project>
+      <Name>AP.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

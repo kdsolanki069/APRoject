@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+
+   
+        <!-- Breadcrumbs-->
+
+
+        <section class="content-header">
+            <h1>
+                Order
+                <small>Purchase Order</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="#">Order</a></li>
+                <li class="active">Purchase Order Detail</li>
+            </ol>
+            <div class="row"></div>
+            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom: 10px;margin-top: 10px;">
+                <div class="col-md-4 pull-right">
+                    <a class="btn btn-success pull-right" id="btnAdd" href="/PurchaseOrder/Add"><span>Add Purchase Order</span></a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+
+
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">&nbsp; Purchase Order Detail</h3>
+
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div id="tbdata" class="table-responsive">
+                                <table class="table table-bordered" id="PurchaseOrderTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Date</th>
+                                            <th>Purchase Order No</th>
+                                            <th>Company Detail</th>
+                                            <th>Status</th>
+                                            <th width="70px;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Date</th>
+                                            <th>Purchase Order No</th>
+                                            <th>Company Detail</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="PurchaseOrderData"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+
+
+     
+
+
+
+    <script src="~/PageJS/PurchaseOrder/List.js"></script>

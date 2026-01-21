@@ -1,0 +1,16 @@
+1)  1A1 R
+2)  1A1 Parting wheel
+3)  1A1 R 1A1 Parting wheel
+
+
+Cut-off applications – 1A1R wheels:
+• Use the largest diameter flanges possible
+• Use flanges of equal diameter
+• Use the thickest wheel possible for increased
+stiffness and straightness of cut
+cBN wheels are used on hardened steels.
+Diamond wheel are used to cut or slot
+carbide, glass or ceramic parts.
+TECHtip
+It is the user’s responsibility to refer to and comply with ANSI B7.1
+

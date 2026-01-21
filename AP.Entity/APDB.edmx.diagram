@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b73cb1a8f9541e8b6a21cfcd1d0f92b" Name="Diagram1" ZoomLevel="30" >
+        <EntityTypeShape EntityType="APDBModel.CompanyDetail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APDBModel.Order" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APDBModel.OrderDetail" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APDBModel.OrderTransaction" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="APDBModel.Product" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APDBModel.ProductType" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="APDBModel.WorkSheet" Width="1.5" PointX="6.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

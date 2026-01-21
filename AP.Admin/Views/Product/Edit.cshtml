@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Product
+        <small>Edit Product</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Product</a></li>
+        <li class="active">Edit Product</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">&nbsp; Edit Product</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ddlProductType">Product Type :</label>
+                                <select id="ddlProductType" class="form-control  requiredfield">
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductsize">Product Size :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield" id="txtProductsize" placeholder="Product Size" name="txtProductsize">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductx">Product X  :</label>
+                                <input type="text" class="form-control  requiredfield" id="txtProductx" placeholder="Product X" name="txtProductx">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductuw">Product U/W :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield" id="txtProductuw" placeholder="Product U/W" name="txtProductuw">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductgrade">Product Grade :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield" id="txtProductgrade" placeholder="Product Grade" name="txtProductgrade">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductcode">Product Code :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield" id="txtProductcode" placeholder="Product Code" name="txtProductcode">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductprice">Product Price :</label>
+                                <input type="text" class="form-control  requiredfield" id="txtProductprice" placeholder="Product Price" name="txtProductprice">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductcompany">Product Company :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield " id="txtProductcompany" placeholder="Product Company" name="txtProductcompany">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductabrasive">Product Abrasive :</label>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control  requiredfield" id="txtProductabrasive" placeholder="Product Abrasive" name="txtProductabrasive">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductweight">Product Weight :</label>
+                                <input type="number" class="form-control  requiredfield" id="txtProductweight" placeholder="Product Weight" name="txtProductweight">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductquality">Product Quality :</label>
+                                <input type="text" class="form-control  requiredfield" id="txtProductquality" placeholder="Product Quality" name="txtProductquality">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="txtProductmovement">Product Movement :</label>
+                                <input type="text" class="form-control  requiredfield" id="txtProductmovement" placeholder="Select Date" name="txtProductmovement">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+
+                            <h5>
+                                <label for="chkActive" style="margin-top:30px;">Product  Active</label>
+                                <input type="checkbox" style="margin-top:30px;" id="chkActive" checked="checked">
+                            </h5>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="box-footer">
+
+                        <button type="button" class="btn btn-success" id="btneditproduct">Edit Product Detial</button>
+                        <button type="submit" class="btn btn-default" style="margin-left:50px;">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+<script src="~/PageJS/Product/Edit.js"></script>

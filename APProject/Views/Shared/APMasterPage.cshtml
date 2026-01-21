@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <!-- Stylesheets -->
+    <link href="~/Machinery/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Machinery/css/style.css" rel="stylesheet">
+    <link href="~/Machinery/css/responsive.css" rel="stylesheet">
+
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/Machinery/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Machinery/images/favicon.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <script src="~/Machinery/js/jquery.js"></script>
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../../../Machinery/images/preloader.svg') 50% 50% no-repeat rgb(249,249,249);
+            opacity: .8;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+    var  PhotoUrl = '@System.Configuration.ConfigurationManager.AppSettings["PhotoUrl"]';
+    </script>
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        @*<div class="preloader"></div>*@
+
+        <div class="loader" id="loader" style="display:none;"></div>
+
+        <!-- Main Header-->
+        <header class="main-header style-two">
+            <!--Header Top-->
+            <div class="header-top">
+                <div class="auto-container">
+                    <div class="inner-container clearfix">
+                        @*<div class="top-left">
+                            <ul class="clearfix top-menu">
+                                <li><a href="#">News & Updates</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Login</a></li>
+                            </ul>
+                        </div>*@
+                        <div class="top-right clearfix">
+                            <ul class="clearfix right-info">
+                                <li><i class="icon flaticon-clock-circular-outline"></i> Mon - Sat: 10:00 AM - 7:00 PM </li>
+                            </ul>
+                            <div class="language ">
+                                <a class="btn btn-default "><span class="icon flaticon-globe"></span> INDIA </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Header-Upper-->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="clearfix">
+
+                        <div class="pull-left logo-outer">
+                            <div class="logo"><a href="/home/Index"><img src="~/Machinery/images/logo-2.png" height="90px" width="200px" alt="" title="" /></a></div>
+                        </div>
+
+                        <div class="pull-right upper-right clearfix">
+
+                            <!--Info Box-->
+                            <div class="upper-column info-box">
+                                <div class="icon-box"><span class="machinery-icon-map"></span></div>
+                                <ul>
+                                    <li>ABCPUNIT MARG, </li>
+                                    <li><strong>MANINAGAR AHMEDABAD-380008 GUJARAT,INDIA</strong></li>
+                                </ul>
+                            </div>
+
+                            <!--Info Box-->
+                            <div class=" info-box">
+                                <div class="icon-box"><span class="machinery-icon-contact"></span></div>
+                                <ul>
+                                    <li><a href="tel:+917096197546">ABC</a></li>
+                                    <li><strong><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ABC" target="_blank">ABC</a></strong></li>
+                                </ul>
+                            </div>
+
+                            <!--social Box-->
+                            <div class="upper-column info-box" style="display:none">
+                                @*<div class="social-icons">
+                                    <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </div>*@
+                                <!-- /.social-icons -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+            <!--Header Lower-->
+            <div class="header-lower">
+
+                <div class="auto-container">
+                    <div class="nav-outer clearfix">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current dropdown">
+                                        <a href="~/Home/index">Home</a>
+                                        <ul>
+                                            <li><a href="~/Home/index">Home </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="~/Home/AboutUs">About Us</a>
+                                        <ul>
+                                            <li><a href="~/Home/AboutUs">About Company</a></li>
+                                            <li><a href="~/Home/FAQ">FAQ’s</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="~/Product/Products">Products</a>
+                                        <ul>
+                                            <li><a href="/Product/Products">Products</a></li>
+                                            @*<li><a href="/Product/Detail">Product Single</a></li>
+                                            <li><a href="shoping-cart.html">Shopping Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="login.html">My Account</a></li>*@
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/Home/contactUs">Contact Us</a>
+                                        <ul>
+                                            <li><a href="/Home/ContactUs">Contact Us</a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <!--Search Box-->
+                        @*<div class="search-box">
+                            <div class="dropdown dropdown-outer">
+                                <a href="shoping-cart.html" class="cart-btn"><i class="machinery-icon-null"></i><span class="count">0</span></a>
+                                <!--
+                                -->
+                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                    <li class="panel-outer">
+                                        <div class="form-container">
+                                            <form method="post" action="http://steelthemes.com/demo/html/Machinery/blog.html">
+                                                <div class="form-group">
+                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required="">
+                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>*@
+
+                        <!-- Outer Box-->
+                        <div class="outer-box">
+                            <div class="link-box"><a href="/Home/ContactUs" class="theme-btn btn-style-one">Get a Quote</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Lower-->
+            <!--Sticky Header-->
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <!--Logo-->
+                    <div class="logo pull-left">
+                        <a href="/Home/index" class="img-responsive"><img src="~/Machinery/images/logo.png" height="50" width="100" alt="" title=""></a>
+                    </div>
+                    <!--Right Col-->
+                    <div class="right-col pull-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current dropdown">
+                                        <a href="~/Home/index">Home</a>
+                                        <ul>
+                                            <li><a href="~/Home/index">Home</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">About Us</a>
+                                        <ul>
+                                            <li><a href="~/Home/AboutUs">About Company</a></li>
+                                            <li><a href="~/Home/faq">FAQ’s</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#">Products</a>
+                                        <ul>
+
+                                            <li><a href="~/Product/Products">Products </a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Contact Us</a>
+                                        <ul>
+                                            <li><a href="~/Home/ContactUs">Contact Us</a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav><!-- Main Menu End-->
+                    </div>
+                </div>
+            </div>
+            <!--End Sticky Header-->
+        </header>
+        <!--End Main Header -->
+
+        @RenderBody()
+        <!-- Main Footer -->
+        <footer class="main-footer padding-top">
+            <div class="auto-container">
+                <!--Widgets Section-->
+                <div class="widgets-section">
+                    <div class="row clearfix">
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-4 col-sm-6 col-xs-12">
+                            <div class="logo"><a href="/Home/index" style="font-size:30px;"><img src="~/Machinery/images/Logo2.png" alt=""> </a></div>
+                            <div class="footer-widget subscribe-widget">
+                                <div class="widget-content">
+                                    <div class="text">
+                                        <h4>Let’s join & create something together</h4>
+                                        <p>Must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and will give you completed.</p>
+                                        @*<form class="subscribe-form">
+                                            <input type="text" name="email" placeholder="Enter your email address...">
+                                            <button type="submit"><i class="machinery-icon-next"></i>Subscribe Us</button>
+                                        </form>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-widget links-widget">
+                                <div class="widget-title"><h2>Usefull Links</h2></div>
+                                <div class="widget-content">
+                                    <ul class="list clearfix">
+                                        <li><a href="~/Home/AboutUs">About Company</a></li>
+                                        <li><a href="~/Home/index">Home</a></li>
+                                        <li><a href="~/Home/AboutUs">Why Choose Us</a></li>
+                                        <li><a href="~/Product/Products">Shop Products</a></li>
+                                        <li><a href="~/Home/ContactUs">Get a Quote</a></li>
+                                        <li><a href="~/Home/faq">Latest From Blog</a></li>
+                                        <li><a href="~/Home/faq">FAQ’s</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-widget contact-widget">
+                                <div class="single-contact-widget">
+                                    <div class="icon-box">
+                                        <i class="machinery-icon-telephone"></i>
+                                    </div><!-- /.icon-box -->
+                                    <div class="text-box">
+                                        <h3>For Business Dealing:</h3>
+                                        <span><a href="tel:+917096197546">ABC</a></span>
+                                        <p>Available 10:00 AM -7:00 PM all days.</p>
+                                    </div><!-- /.text-box -->
+                                </div><!-- /.single-contact-widget -->
+                                <div class="single-contact-widget">
+                                    <div class="icon-box">
+                                        <i class="machinery-icon-map"></i>
+                                    </div><!-- /.icon-box -->
+                                    <div class="text-box">
+                                        <p>ABCPUNIT MARG<br>MANINAGAR AHMEDABAD-380008 GUJARAT,INDIA.</p>
+                                    </div><!-- /.text-box -->
+                                </div><!-- /.single-contact-widget -->
+                                <div class="single-contact-widget">
+                                    <div class="icon-box">
+                                        <i class="machinery-icon-send"></i>
+                                    </div><!-- /.icon-box -->
+                                    <div class="text-box">
+                                        <h3>Mail Us at</h3>
+                                        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ABC" target="_blank">ABC</a></p>
+                                    </div><!-- /.text-box -->
+                                </div><!-- /.single-contact-widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer Bottom-->
+            <div class="footer-bottom">
+                <div class="auto-container clearfix">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+                            @*<a href="#" class="expert-link"><i class="machinery-icon-human-rights"></i>Quote From Our Expert</a>*@
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="copyright-text">&copy; 2019 &nbsp; to @DateTime.Now.Year All Rights Reserved by <a href="~/Home/Index">ABC</a></div>
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-right">
+                            <ul class="footer-menu">
+                            </ul><!-- /.footer-menu -->
+                        </div><!-- /.col-md-4 -->
+                    </div><!-- /.row -->
+                </div>
+            </div>
+        </footer>
+        <!-- End Main Footer -->
+
+    </div>
+    <!--End pagewrapper-->
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-arrow-up"></span></div>
+    <script src="~/Machinery/js/jquery.js"></script>
+    <script src="~/Machinery/js/bootstrap.min.js"></script>
+    <script src="~/Machinery/js/jquery-ui.js"></script>
+    <script src="~/Machinery/js/jquery.fancybox.js"></script>
+    <script src="~/Machinery/js/slick.min.js"></script>
+    <script src="~/Machinery/js/owl.js"></script>
+    <script src="~/Machinery/js/appear.js"></script>
+    <script src="~/Machinery/js/wow.js"></script>
+    <script src="~/Machinery/js/isotope.js"></script>
+    <script src="~/Machinery/js/jquery.bootstrap-touchspin.js"></script>
+
+    <script src="~/Machinery/js/script.js"></script>
+
+
+
+    <script type="text/javascript">
+          function showLoader() {
+            $(".loader").fadeIn("slow");
+        }
+        function hideLoader() {
+            $(".loader").fadeOut("slow");
+        }
+    </script>
+
+
+
+</body>
+
+</html>

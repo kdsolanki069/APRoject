@@ -1,0 +1,210 @@
+﻿
+@{
+    ViewBag.Title = "ProformaEdit";
+    Layout = "~/Views/Shared/APAdminMasterPage.cshtml";
+}
+
+<link href="~/PageCSS/Order.css" rel="stylesheet" />
+
+
+
+<section class="content-header">
+    <h1>
+        Biling Detail
+        <small>Edit Proforma</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Biling Detail</a></li>
+        <li class="active">Edit Proforma</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-8 pull-left">
+
+        </div>
+        <div class="col-md-4 ">
+            <button type="button" class="btn btn-info pull-right  " style="margin:5px; " id="btnChallan">Create Challan</button>
+        </div>
+    </div>
+</section>
+<!-- Example DataTables Card-->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">&nbsp;Edit Proforma Detail</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <button class="accordion">Company Details</button>
+
+                    <div class="panel">
+                        <div class="form-row">
+
+                            <div class="form-group col-md-10">
+                                <label for="cprod">Select Company:</label>
+                                <select class="form-control select2 requiredfield" id="ddlcname"></select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="accordion"> Products Detail</button>
+                    <div class="panel" id="panel2">
+
+
+                        </br>
+                        <div id="pdata">
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label for="psize">No</label>
+
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="psize">Product Specification</label>
+
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="pspecs2">Unit Price</label>
+
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="pprice">Quantity</label>
+
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="pdiscount">Amount</label>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <button type="button" class="btn btn-alert btn-sm pull-right" style="margin-bottom:5px;" id="btnEditproduct"> Edit</button>
+
+
+                    </div>
+
+                    <button class="accordion">Proforma Specification</button>
+                    <div class="panel" style="margin-top:30px;">
+
+
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="PComments">Comments or Special Instructions</label>
+                                <input type="text" class="form-control" id="PComments" placeholder="Comments or Special Instructions">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="PFreight">Freight Charge</label>
+                                <input type="text" class="form-control" id="PFreight" placeholder="Freight Charge ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="PDiliveryTime">Dilivery Time</label>
+                                <input type="text" class="form-control" id="PDiliveryTime" placeholder="Dilivery Time ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cprod">ShipVia:</label>
+                                <select class="form-control select2 " id="ddlShipVia">
+                                    <option value="-1">Select Ship Option </option>
+                                    <option value="Courier">Courier</option>
+                                    <option value="Post">Post</option>
+                                    <option value="office Pickup">office Pickup </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="PchkApplyGST" style="margin-top:30px;">Apply GST</label>
+                                <input type="checkbox" style="margin-top:30px;" id="PchkApplyGST">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="" style="margin-top:2em;margin-bottom:2em;">
+                        <button type="submit" class="btn btn-info btn-lg" id="btnEditProforma">Submit</button>
+                        <button class="btn btn-secondary btn-lg pull-right" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<div class="modal fade " id="CompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="pull-left col-md-7">
+                    <h3 class="modal-title" id="exampleModalLabel"><span>Edit  Product Detail</span> </h3>
+                </div>
+                @*<div class="col-md-4 pull-right">
+                        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#ImportModal">+ Import</button>
+                    </div>*@
+
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div id="pdata1">
+                        <div class="form-row">
+                            <div class="form-group col-md-1">
+                                <label for="psize">No</label>
+
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="psize">Product Specification</label>
+
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="pspecs2">Unit Price</label>
+
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="pprice">Quantity</label>
+
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="pdiscount">Amount</label>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <input type="hidden" id="cid" value="-1" />
+                    <button type="button" class="btn btn-danger btn-sm pull-right" style="margin:0px 0px 5px 10px;" id="btnRemoveproduct">- Remove</button>
+                    <button type="button" class="btn btn-info btn-sm pull-right" style="margin-bottom:5px;" id="btnaddproduct">+ Add</button>
+                </form>
+
+            </div>
+            <div class="modal-fotter" style="margin-left:50%;">
+                <button type="button" class="btn btn-info  " style="margin-bottom:5px; " id="btneditproduct">Edit Detail</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/PageJS/Order/Proforma/ProformaUpdate.js"></script>

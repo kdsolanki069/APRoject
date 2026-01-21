@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="APDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CompanyDetail">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactPersonName" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyAddress" Type="varchar" MaxLength="500" />
+          <Property Name="Companycountry" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyState" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyPinCode" Type="varchar" MaxLength="10" />
+          <Property Name="CompanyPhone" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyEmail" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyGST" Type="varchar" MaxLength="20" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderDate" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="OrderType" Type="int" />
+          <Property Name="DiliveryTime" Type="varchar" MaxLength="50" />
+          <Property Name="TotalAmount" Type="int" />
+          <Property Name="TotalDue" Type="int" />
+          <Property Name="OrderNo" Type="varchar" MaxLength="20" />
+          <Property Name="ShipVia" Type="varchar" MaxLength="20" />
+          <Property Name="GSTApply" Type="int" />
+          <Property Name="OrderComments" Type="varchar(max)" />
+          <Property Name="freightcharge" Type="int" />
+          <Property Name="OrderStatus" Type="int" />
+          <Property Name="IsPaid" Type="bit" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductDetail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ProductPrice" Type="int" Nullable="false" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="RemainingQuantity" Type="int" />
+          <Property Name="OLDProductPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderTransaction">
+          <Key>
+            <PropertyRef Name="OrderTransactionId" />
+          </Key>
+          <Property Name="OrderTransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OrderDetailID" Type="int" Nullable="false" />
+          <Property Name="BillNo" Type="varchar" MaxLength="50" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="ProductSize" Type="varchar" MaxLength="50" />
+          <Property Name="ProductX" Type="varchar" MaxLength="5" />
+          <Property Name="ProductUw" Type="varchar" MaxLength="5" />
+          <Property Name="ProductGrade" Type="varchar" MaxLength="20" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="20" />
+          <Property Name="ProductPhoto" Type="varchar(max)" />
+          <Property Name="ProductPrice" Type="int" />
+          <Property Name="ProductCompany" Type="varchar" MaxLength="50" />
+          <Property Name="ProductAbrasive" Type="varchar" MaxLength="5" />
+          <Property Name="ProductWeight" Type="int" />
+          <Property Name="ProductQuality" Type="varchar" MaxLength="50" />
+          <Property Name="ProductMovement" Type="varchar" MaxLength="50" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="ProductTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductTypeDetail" Type="varchar(max)" />
+          <Property Name="FrontImage" Type="varchar(max)" />
+          <Property Name="DiagramImage" Type="varchar(max)" />
+          <Property Name="ProductTypeImage" Type="varchar(max)" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WorkSheet">
+          <Key>
+            <PropertyRef Name="WorkId" />
+          </Key>
+          <Property Name="WorkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Remark" Type="varchar(max)" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="Updatedby" Type="int" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="usp_GetCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetCompanyDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetCompanyProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="OrderType" Type="int" Mode="In" />
+          <Parameter Name="OrderStatus" Type="int" Mode="In" />
+          <Parameter Name="IsPaid" Type="bit" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetOrderDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetOrderTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+          <Parameter Name="OrderDetailID" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+          <Parameter Name="ProductTypeId" Type="int" Mode="In" />
+          <Parameter Name="ProductTypeName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetProductType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="ProductTypeId" Type="int" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <Parameter Name="ProductTypeName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetWorkSheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="WorkId" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ImportCompanyDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Createdby" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateCompanyDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyAddress" Type="varchar" Mode="In" />
+          <Parameter Name="Companycountry" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyState" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyPinCode" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyPhone" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyEmail" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyGST" Type="varchar" Mode="In" />
+          <Parameter Name="ContactPersonName" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+          <Parameter Name="OrderDate" Type="varchar" Mode="In" />
+          <Parameter Name="OrderType" Type="int" Mode="In" />
+          <Parameter Name="DiliveryTime" Type="varchar" Mode="In" />
+          <Parameter Name="TotalAmount" Type="int" Mode="In" />
+          <Parameter Name="TotalDue" Type="int" Mode="In" />
+          <Parameter Name="OrderNo" Type="varchar" Mode="In" />
+          <Parameter Name="ShipVia" Type="varchar" Mode="In" />
+          <Parameter Name="GSTApply" Type="int" Mode="In" />
+          <Parameter Name="OrderComments" Type="varchar(max)" Mode="In" />
+          <Parameter Name="freightcharge" Type="int" Mode="In" />
+          <Parameter Name="OrderStatus" Type="int" Mode="In" />
+          <Parameter Name="IsPaid" Type="bit" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateOrderDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="Createdby" Type="int" Mode="In" />
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateOrderTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="Createdby" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+          <Parameter Name="ProductTypeId" Type="int" Mode="In" />
+          <Parameter Name="ProductSize" Type="varchar" Mode="In" />
+          <Parameter Name="ProductX" Type="varchar" Mode="In" />
+          <Parameter Name="ProductUw" Type="varchar" Mode="In" />
+          <Parameter Name="ProductGrade" Type="varchar" Mode="In" />
+          <Parameter Name="ProductCode" Type="varchar" Mode="In" />
+          <Parameter Name="ProductPhoto" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ProductPrice" Type="int" Mode="In" />
+          <Parameter Name="ProductCompany" Type="varchar" Mode="In" />
+          <Parameter Name="ProductAbrasive" Type="varchar" Mode="In" />
+          <Parameter Name="ProductWeight" Type="int" Mode="In" />
+          <Parameter Name="ProductQuality" Type="varchar" Mode="In" />
+          <Parameter Name="ProductMovement" Type="varchar" Mode="In" />
+          <Parameter Name="Createdby" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateProductType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="ProductTypeId" Type="int" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <Parameter Name="ProductTypeName" Type="varchar" Mode="In" />
+          <Parameter Name="ProductTypeDetail" Type="varchar(max)" Mode="In" />
+          <Parameter Name="FrontImage" Type="varchar(max)" Mode="In" />
+          <Parameter Name="DiagramImage" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ProductTypeImage" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Createdby" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateWorkSheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="WorkId" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Remark" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetOrderData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="YogData123">
+          <Parameter Name="Flag" Type="varchar" Mode="In" />
+          <Parameter Name="OrderId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="APDBModelStoreContainer">
+          <EntitySet Name="CompanyDetail" EntityType="Self.CompanyDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderTransaction" EntityType="Self.OrderTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkSheet" EntityType="Self.WorkSheet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="APDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="APDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="CompanyDetail" EntityType="APDBModel.CompanyDetail" />
+          <EntitySet Name="Order" EntityType="APDBModel.Order" />
+          <EntitySet Name="OrderDetail" EntityType="APDBModel.OrderDetail" />
+          <EntitySet Name="OrderTransaction" EntityType="APDBModel.OrderTransaction" />
+          <EntitySet Name="Product" EntityType="APDBModel.Product" />
+          <EntitySet Name="ProductType" EntityType="APDBModel.ProductType" />
+          <EntitySet Name="WorkSheet" EntityType="APDBModel.WorkSheet" />
+          <FunctionImport Name="usp_GetCompany" ReturnType="Collection(APDBModel.usp_GetCompany_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetCompanyDashboard" ReturnType="Collection(APDBModel.usp_GetCompanyDashboard_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetCompanyProduct" ReturnType="Collection(APDBModel.usp_GetCompanyProduct_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetDashboard" ReturnType="Collection(APDBModel.usp_GetDashboard_Result)" />
+          <FunctionImport Name="usp_GetOrder" ReturnType="Collection(APDBModel.usp_GetOrder_Result)">
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="OrderType" Mode="In" Type="Int32" />
+            <Parameter Name="OrderStatus" Mode="In" Type="Int32" />
+            <Parameter Name="IsPaid" Mode="In" Type="Boolean" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetOrderDetail" ReturnType="Collection(APDBModel.usp_GetOrderDetail_Result)">
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetOrderTransaction" ReturnType="Collection(APDBModel.usp_GetOrderTransaction_Result)">
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="OrderDetailID" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetProduct" ReturnType="Collection(APDBModel.usp_GetProduct_Result)">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductTypeName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetProductType" ReturnType="Collection(APDBModel.usp_GetProductType_Result)">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetWorkSheet" ReturnType="Collection(APDBModel.usp_GetWorkSheet_Result)">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="WorkId" Mode="In" Type="Int32" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ImportCompanyDetail">
+            <Parameter Name="Createdby" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateCompanyDetail">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="CompanyAddress" Mode="In" Type="String" />
+            <Parameter Name="Companycountry" Mode="In" Type="String" />
+            <Parameter Name="CompanyState" Mode="In" Type="String" />
+            <Parameter Name="CompanyPinCode" Mode="In" Type="String" />
+            <Parameter Name="CompanyPhone" Mode="In" Type="String" />
+            <Parameter Name="CompanyEmail" Mode="In" Type="String" />
+            <Parameter Name="CompanyGST" Mode="In" Type="String" />
+            <Parameter Name="ContactPersonName" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateOrder" ReturnType="Collection(Decimal)">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="OrderDate" Mode="In" Type="String" />
+            <Parameter Name="OrderType" Mode="In" Type="Int32" />
+            <Parameter Name="DiliveryTime" Mode="In" Type="String" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Int32" />
+            <Parameter Name="TotalDue" Mode="In" Type="Int32" />
+            <Parameter Name="OrderNo" Mode="In" Type="String" />
+            <Parameter Name="ShipVia" Mode="In" Type="String" />
+            <Parameter Name="GSTApply" Mode="In" Type="Int32" />
+            <Parameter Name="OrderComments" Mode="In" Type="String" />
+            <Parameter Name="freightcharge" Mode="In" Type="Int32" />
+            <Parameter Name="OrderStatus" Mode="In" Type="Int32" />
+            <Parameter Name="IsPaid" Mode="In" Type="Boolean" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateOrderDetail">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="Createdby" Mode="In" Type="Int32" />
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateOrderTransaction">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="Createdby" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateProduct">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductSize" Mode="In" Type="String" />
+            <Parameter Name="ProductX" Mode="In" Type="String" />
+            <Parameter Name="ProductUw" Mode="In" Type="String" />
+            <Parameter Name="ProductGrade" Mode="In" Type="String" />
+            <Parameter Name="ProductCode" Mode="In" Type="String" />
+            <Parameter Name="ProductPhoto" Mode="In" Type="String" />
+            <Parameter Name="ProductPrice" Mode="In" Type="Int32" />
+            <Parameter Name="ProductCompany" Mode="In" Type="String" />
+            <Parameter Name="ProductAbrasive" Mode="In" Type="String" />
+            <Parameter Name="ProductWeight" Mode="In" Type="Int32" />
+            <Parameter Name="ProductQuality" Mode="In" Type="String" />
+            <Parameter Name="ProductMovement" Mode="In" Type="String" />
+            <Parameter Name="Createdby" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateProductType">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeName" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeDetail" Mode="In" Type="String" />
+            <Parameter Name="FrontImage" Mode="In" Type="String" />
+            <Parameter Name="DiagramImage" Mode="In" Type="String" />
+            <Parameter Name="ProductTypeImage" Mode="In" Type="String" />
+            <Parameter Name="Createdby" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateWorkSheet">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="WorkId" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Remark" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetOrderData" ReturnType="Collection(APDBModel.usp_GetOrderData_Result)">
+            <Parameter Name="Flag" Mode="In" Type="String" />
+            <Parameter Name="OrderId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="CompanyDetail">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Companycountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyPinCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyGST" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="OrderType" Type="Int32" />
+          <Property Name="DiliveryTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="Int32" />
+          <Property Name="TotalDue" Type="Int32" />
+          <Property Name="OrderNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShipVia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GSTApply" Type="Int32" />
+          <Property Name="OrderComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="freightcharge" Type="Int32" />
+          <Property Name="OrderStatus" Type="Int32" />
+          <Property Name="IsPaid" Type="Boolean" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductDetail" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ProductPrice" Type="Int32" Nullable="false" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RemainingQuantity" Type="Int32" />
+          <Property Name="OLDProductPrice" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OrderTransaction">
+          <Key>
+            <PropertyRef Name="OrderTransactionId" />
+          </Key>
+          <Property Name="OrderTransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
+          <Property Name="BillNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ProductSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductX" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ProductUw" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ProductGrade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPrice" Type="Int32" />
+          <Property Name="ProductCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductAbrasive" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ProductWeight" Type="Int32" />
+          <Property Name="ProductQuality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductMovement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductTypeDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FrontImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DiagramImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductTypeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WorkSheet">
+          <Key>
+            <PropertyRef Name="WorkId" />
+          </Key>
+          <Property Name="WorkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="Updatedby" Type="Int32" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="usp_GetCompany_Result">
+          <Property Type="Int32" Name="CompanyId" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Companycountry" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyState" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyPinCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CompanyPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyEmail" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyGST" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ContactPersonName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_GetCompanyDashboard_Result">
+          <Property Type="Int32" Name="QuatationCount" Nullable="true" />
+          <Property Type="Int32" Name="PerfomaCount" Nullable="true" />
+          <Property Type="Int32" Name="ChallanCount" Nullable="true" />
+          <Property Type="Int32" Name="POrderCount" Nullable="true" />
+          <Property Type="Int32" Name="SOrderCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetCompanyProduct_Result">
+          <Property Type="Int32" Name="CompanyId" Nullable="true" />
+          <Property Type="String" Name="OrderNo" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="OrderType" Nullable="true" />
+          <Property Type="String" Name="ProductDetail" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="ProductPrice" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetDashboard_Result">
+          <Property Type="Int32" Name="QuatationCount" Nullable="true" />
+          <Property Type="Int32" Name="PerfomaCount" Nullable="true" />
+          <Property Type="Int32" Name="ChallanCount" Nullable="true" />
+          <Property Type="Int32" Name="POrderCount" Nullable="true" />
+          <Property Type="Int32" Name="SOrderCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetOrder_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="OrderDate" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OrderType" Nullable="true" />
+          <Property Type="String" Name="DiliveryTime" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalAmount" Nullable="true" />
+          <Property Type="Int32" Name="TotalDue" Nullable="true" />
+          <Property Type="String" Name="OrderNo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ShipVia" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="GSTApply" Nullable="true" />
+          <Property Type="String" Name="OrderComments" Nullable="true" />
+          <Property Type="Int32" Name="freightcharge" Nullable="true" />
+          <Property Type="Int32" Name="OrderStatus" Nullable="true" />
+          <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+          <Property Type="Int32" Name="CompanyId" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Companycountry" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyState" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyPinCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CompanyPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyEmail" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyGST" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_GetOrderDetail_Result">
+          <Property Type="Int32" Name="OrderDetailID" Nullable="false" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="ProductDetail" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="RemainingQuantity" Nullable="true" />
+          <Property Type="Int32" Name="ProductPrice" Nullable="false" />
+          <Property Type="Int32" Name="OLDProductPrice" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetOrderTransaction_Result">
+          <Property Type="Int32" Name="OrderDetailID" Nullable="false" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="ProductDetail" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="RemainingQuantity" Nullable="true" />
+          <Property Type="Int32" Name="ProductPrice" Nullable="false" />
+          <Property Type="Int32" Name="OrderTransactionId" Nullable="false" />
+          <Property Type="String" Name="BillNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SupplyQuantity" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetProduct_Result">
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Int32" Name="ProductTypeId" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductX" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="ProductUw" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="ProductGrade" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ProductPhoto" Nullable="true" />
+          <Property Type="Int32" Name="ProductPrice" Nullable="true" />
+          <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductAbrasive" Nullable="true" MaxLength="5" />
+          <Property Type="Int32" Name="ProductWeight" Nullable="true" />
+          <Property Type="String" Name="ProductQuality" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductMovement" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_GetProductType_Result">
+          <Property Type="Int32" Name="ProductTypeId" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeDetail" Nullable="true" />
+          <Property Type="String" Name="FrontImage" Nullable="true" />
+          <Property Type="String" Name="DiagramImage" Nullable="true" />
+          <Property Type="String" Name="ProductTypeImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetWorkSheet_Result">
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CompanyId" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="Remark" Nullable="true" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="WorkId" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetOrderData_Result">
+          <Property Type="Int32" Name="OrderId" Nullable="true" />
+          <Property Type="String" Name="OrderNo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="OrderDate" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CompanyId" Nullable="true" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" MaxLength="604" />
+          <Property Type="String" Name="CompanyPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyEmail" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyGST" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ProductDetail" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="ProductPrice" Nullable="false" />
+          <Property Type="Int32" Name="RemainingQuantity" Nullable="true" />
+          <Property Type="Int32" Name="OrderType" Nullable="true" />
+          <Property Type="String" Name="DiliveryTime" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalAmount" Nullable="true" />
+          <Property Type="Int32" Name="TotalDue" Nullable="true" />
+          <Property Type="String" Name="ShipVia" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="GSTApply" Nullable="true" />
+          <Property Type="String" Name="OrderComments" Nullable="true" />
+          <Property Type="Int32" Name="freightcharge" Nullable="true" />
+          <Property Type="Int32" Name="OrderStatus" Nullable="true" />
+          <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="APDBModelStoreContainer" CdmEntityContainer="APDBEntities" >
+          <EntitySetMapping Name="CompanyDetail">
+            <EntityTypeMapping TypeName="APDBModel.CompanyDetail">
+              <MappingFragment StoreEntitySet="CompanyDetail">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CompanyGST" ColumnName="CompanyGST" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyPinCode" ColumnName="CompanyPinCode" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="Companycountry" ColumnName="Companycountry" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="APDBModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="freightcharge" ColumnName="freightcharge" />
+                <ScalarProperty Name="OrderComments" ColumnName="OrderComments" />
+                <ScalarProperty Name="GSTApply" ColumnName="GSTApply" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DiliveryTime" ColumnName="DiliveryTime" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetail">
+            <EntityTypeMapping TypeName="APDBModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="OLDProductPrice" ColumnName="OLDProductPrice" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderTransaction">
+            <EntityTypeMapping TypeName="APDBModel.OrderTransaction">
+              <MappingFragment StoreEntitySet="OrderTransaction">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderTransactionId" ColumnName="OrderTransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="APDBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="ProductMovement" ColumnName="ProductMovement" />
+                <ScalarProperty Name="ProductQuality" ColumnName="ProductQuality" />
+                <ScalarProperty Name="ProductWeight" ColumnName="ProductWeight" />
+                <ScalarProperty Name="ProductAbrasive" ColumnName="ProductAbrasive" />
+                <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductGrade" ColumnName="ProductGrade" />
+                <ScalarProperty Name="ProductUw" ColumnName="ProductUw" />
+                <ScalarProperty Name="ProductX" ColumnName="ProductX" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductType">
+            <EntityTypeMapping TypeName="APDBModel.ProductType">
+              <MappingFragment StoreEntitySet="ProductType">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="ProductTypeImage" ColumnName="ProductTypeImage" />
+                <ScalarProperty Name="DiagramImage" ColumnName="DiagramImage" />
+                <ScalarProperty Name="FrontImage" ColumnName="FrontImage" />
+                <ScalarProperty Name="ProductTypeDetail" ColumnName="ProductTypeDetail" />
+                <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkSheet">
+            <EntityTypeMapping TypeName="APDBModel.WorkSheet">
+              <MappingFragment StoreEntitySet="WorkSheet">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetCompany" FunctionName="APDBModel.Store.usp_GetCompany">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetCompany_Result">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="Companycountry" ColumnName="Companycountry" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="CompanyPinCode" ColumnName="CompanyPinCode" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyGST" ColumnName="CompanyGST" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetCompanyDashboard" FunctionName="APDBModel.Store.usp_GetCompanyDashboard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetCompanyDashboard_Result">
+                <ScalarProperty Name="QuatationCount" ColumnName="QuatationCount" />
+                <ScalarProperty Name="PerfomaCount" ColumnName="PerfomaCount" />
+                <ScalarProperty Name="ChallanCount" ColumnName="ChallanCount" />
+                <ScalarProperty Name="POrderCount" ColumnName="POrderCount" />
+                <ScalarProperty Name="SOrderCount" ColumnName="SOrderCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetCompanyProduct" FunctionName="APDBModel.Store.usp_GetCompanyProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetCompanyProduct_Result">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetDashboard" FunctionName="APDBModel.Store.usp_GetDashboard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetDashboard_Result">
+                <ScalarProperty Name="QuatationCount" ColumnName="QuatationCount" />
+                <ScalarProperty Name="PerfomaCount" ColumnName="PerfomaCount" />
+                <ScalarProperty Name="ChallanCount" ColumnName="ChallanCount" />
+                <ScalarProperty Name="POrderCount" ColumnName="POrderCount" />
+                <ScalarProperty Name="SOrderCount" ColumnName="SOrderCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetOrder" FunctionName="APDBModel.Store.usp_GetOrder">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetOrder_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="DiliveryTime" ColumnName="DiliveryTime" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="GSTApply" ColumnName="GSTApply" />
+                <ScalarProperty Name="OrderComments" ColumnName="OrderComments" />
+                <ScalarProperty Name="freightcharge" ColumnName="freightcharge" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="Companycountry" ColumnName="Companycountry" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="CompanyPinCode" ColumnName="CompanyPinCode" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyGST" ColumnName="CompanyGST" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetOrderDetail" FunctionName="APDBModel.Store.usp_GetOrderDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetOrderDetail_Result">
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="OLDProductPrice" ColumnName="OLDProductPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetOrderTransaction" FunctionName="APDBModel.Store.usp_GetOrderTransaction">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetOrderTransaction_Result">
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="OrderTransactionId" ColumnName="OrderTransactionId" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SupplyQuantity" ColumnName="SupplyQuantity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetProduct" FunctionName="APDBModel.Store.usp_GetProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetProduct_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="ProductX" ColumnName="ProductX" />
+                <ScalarProperty Name="ProductUw" ColumnName="ProductUw" />
+                <ScalarProperty Name="ProductGrade" ColumnName="ProductGrade" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+                <ScalarProperty Name="ProductAbrasive" ColumnName="ProductAbrasive" />
+                <ScalarProperty Name="ProductWeight" ColumnName="ProductWeight" />
+                <ScalarProperty Name="ProductQuality" ColumnName="ProductQuality" />
+                <ScalarProperty Name="ProductMovement" ColumnName="ProductMovement" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetProductType" FunctionName="APDBModel.Store.usp_GetProductType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetProductType_Result">
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+                <ScalarProperty Name="ProductTypeDetail" ColumnName="ProductTypeDetail" />
+                <ScalarProperty Name="FrontImage" ColumnName="FrontImage" />
+                <ScalarProperty Name="DiagramImage" ColumnName="DiagramImage" />
+                <ScalarProperty Name="ProductTypeImage" ColumnName="ProductTypeImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetWorkSheet" FunctionName="APDBModel.Store.usp_GetWorkSheet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetWorkSheet_Result">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ImportCompanyDetail" FunctionName="APDBModel.Store.usp_ImportCompanyDetail" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateCompanyDetail" FunctionName="APDBModel.Store.usp_InsertUpdateCompanyDetail" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateOrder" FunctionName="APDBModel.Store.usp_InsertUpdateOrder" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateOrderDetail" FunctionName="APDBModel.Store.usp_InsertUpdateOrderDetail" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateOrderTransaction" FunctionName="APDBModel.Store.usp_InsertUpdateOrderTransaction" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateProduct" FunctionName="APDBModel.Store.usp_InsertUpdateProduct" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateProductType" FunctionName="APDBModel.Store.usp_InsertUpdateProductType" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateWorkSheet" FunctionName="APDBModel.Store.usp_InsertUpdateWorkSheet" />
+          <FunctionImportMapping FunctionImportName="usp_GetOrderData" FunctionName="APDBModel.Store.usp_GetOrderData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="APDBModel.usp_GetOrderData_Result">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyGST" ColumnName="CompanyGST" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="DiliveryTime" ColumnName="DiliveryTime" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="GSTApply" ColumnName="GSTApply" />
+                <ScalarProperty Name="OrderComments" ColumnName="OrderComments" />
+                <ScalarProperty Name="freightcharge" ColumnName="freightcharge" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
